@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         menu.setMenu(R.layout.menu);
     
-    
+        khjefkaj
     }
 
 
