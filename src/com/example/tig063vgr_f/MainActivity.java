@@ -3,10 +3,12 @@ package com.example.tig063vgr_f;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends Activity {
+	TextView text = (TextView) findViewById(R.id.textBus);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
