@@ -18,18 +18,22 @@
         android:id="@+id/buttonDebug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="158dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="@string/btnDebugText" />
+        android:text="@string/btnDebugText" android:layout_alignTop="@+id/editText"
+        android:layout_toRightOf="@+id/textView1" android:layout_marginLeft="38dp"/>
 
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
-            android:layout_below="@+id/textView1"
-            android:layout_alignLeft="@+id/buttonDebug"
-            android:layout_marginTop="17dp"
-            android:text="Qwack"/>
+            android:layout_marginTop="10dp"
+            android:text="Qwack" android:layout_below="@+id/textView1" android:layout_alignLeft="@+id/textView1"
+            android:layout_marginLeft="14dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textView" android:layout_below="@+id/buttonDebug" android:layout_toRightOf="@+id/editText"
+            android:layout_marginTop="40dp"/>
 
 </RelativeLayout>
