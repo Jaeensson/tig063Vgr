@@ -2,32 +2,43 @@ package com.example.tig063vgr.httprules;
 
 import org.json.JSONObject;
 
-import com.example.tig063vgr.JSONParse;
+import android.content.Context;
+import android.os.AsyncTask;
 
-public class WaitTime extends JSONParse {
+import com.example.tig063vgr.APIType;
+import com.example.tig063vgr.NetworkTasks;
 
-	public WaitTime() {
+public class WaitTime extends NetworkTasks {
+	private NetworkTasks mMyNetworkTask = null;
+
+	public WaitTime(Context ctx) {
+		super(ctx, APIType.Modality);
+		if (mMyNetworkTask != null) {
+			return;
+		}
+		mMyNetworkTask = new NetworkTasks(ctx, APIType.Modality);
 	}
 
-	public JSONObject GetOrganizations() {
-		return getJSONFromUrl("GetOrganizations");
+	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
+		return execute("GetOrganizations");
 	}
 
-	public JSONObject GetOrgnizationalUnits() {
-		return getJSONFromUrl("GetOrgnizationalUnits");
+	public AsyncTask<String, Void, JSONObject> GetOrgnizationalUnits() {
+		return execute("GetOrgnizationalUnits");
 	}
 
-	public JSONObject GetStudyTypes() {
-		return getJSONFromUrl("GetStudyTypes");
+	public AsyncTask<String, Void, JSONObject> GetStudyTypes() {
+		return execute("GetStudyTypes");
 	}
 
-	public JSONObject GetStudies() {
-		return getJSONFromUrl("GetStudies");
+	public AsyncTask<String, Void, JSONObject> GetStudies() {
+		return execute("GetStudies");
 	}
 
-	public JSONObject NearLatitudeLongitudeByStudy(String studyId,
-			String latitude, String longitude, String radiusInMetres) {
-		return getJSONFromUrl("NearLatitudeLongitudeByStudy&param1=" + studyId
+	public AsyncTask<String, Void, JSONObject> NearLatitudeLongitudeByStudy(
+			String studyId, String latitude, String longitude,
+			String radiusInMetres) {
+		return execute("NearLatitudeLongitudeByStudy&param1=" + studyId
 				+ " &param2=" + latitude + "&param3=" + longitude + "&param4="
 				+ radiusInMetres);
 	}

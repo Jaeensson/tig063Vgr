@@ -2,28 +2,38 @@ package com.example.tig063vgr.httprules;
 
 import org.json.JSONObject;
 
-import com.example.tig063vgr.JSONParse;
+import android.content.Context;
+import android.os.AsyncTask;
 
-public class Statistics extends JSONParse {
+import com.example.tig063vgr.APIType;
+import com.example.tig063vgr.NetworkTasks;
 
-	public Statistics() {
+public class Statistics extends NetworkTasks {
+	private NetworkTasks mMyNetworkTask = null;
+
+	public Statistics(Context ctx) {
+		super(ctx, APIType.Modality);
+		if (mMyNetworkTask != null) {
+			return;
+		}
+		mMyNetworkTask = new NetworkTasks(ctx, APIType.Modality);
 	}
 
-	public JSONObject GetOrganizations() {
-		return getJSONFromUrl("GetOrganizations");
+	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
+		return execute("GetOrganizations");
 	}
 
-	public JSONObject GetOrgnizationalUnits() {
-		return getJSONFromUrl("GetOrgnizationalUnits");
+	public AsyncTask<String,Void,JSONObject> GetOrgnizationalUnits() {
+		return execute("GetOrgnizationalUnits");
 	}
 
-	public JSONObject GetDataPointsByHsaIdentitiesAndDateInterval(String hsaId,
+	public AsyncTask<String,Void,JSONObject> GetDataPointsByHsaIdentitiesAndDateInterval(String hsaId,
 			String startDate, String endDate) {
-		return getJSONFromUrl("GetDataPointsByHsaIdentitiesAndDateInterval&param1="
+		return execute("GetDataPointsByHsaIdentitiesAndDateInterval&param1="
 				+ hsaId + "&param2=" + startDate + "&param3=" + endDate);
 	}
 
-	public JSONObject GetDataPointsByHsaIdentities(String hsaId) {
-		return getJSONFromUrl("GetDataPointsByHsaIdentities&param1=" + hsaId);
+	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentities(String hsaId) {
+		return execute("GetDataPointsByHsaIdentities&param1=" + hsaId);
 	}
 }

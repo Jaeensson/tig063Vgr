@@ -18,23 +18,30 @@
         android:id="@+id/buttonDebug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnDebugText" android:layout_alignTop="@+id/editText"
+        android:layout_alignTop="@+id/editText"
+        android:layout_marginLeft="38dp"
+        android:layout_toRightOf="@+id/textView1"
         android:onClick="btnDebugClick"
-        android:layout_toRightOf="@+id/textView1" android:layout_marginLeft="38dp"/>
+        android:text="@string/btnDebugText" />
 
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_marginTop="10dp"
-            android:text="Qwack" android:layout_below="@+id/textView1" android:layout_alignLeft="@+id/textView1"
-            android:layout_marginLeft="14dp"/>
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="10dp"
+        android:text="Qwack" />
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textView" android:layout_below="@+id/buttonDebug" android:layout_toRightOf="@+id/editText"
-            android:layout_marginTop="40dp"/>
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonDebug"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/editText"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
