@@ -14,6 +14,7 @@ public class MainActivity extends Activity {
         // set the content view
         setContentView(R.layout.activity_main);
         // configure the SlidingMenu
+        
         SlidingMenu menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
