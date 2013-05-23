@@ -1,36 +1,27 @@
 package com.example.tig063vgr;
 
+import org.json.JSONObject;
+
+import com.example.tig063vgr.httprules.Modality;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-<<<<<<< HEAD
-=======
 import android.widget.TextView;
-import modality.ModalityServiceAgent;
-import org.datacontract.schemas._2004._07.vgregion_modalities_wcf_data.ArrayOfEquipmentDto;
-import org.datacontract.schemas._2004._07.vgregion_modalities_wcf_data.EquipmentDto;
 
-import javax.xml.bind.JAXBElement;
-import java.util.List;
-
->>>>>>> b9936126dbd7344b84e52d072bb6d0779e198f36
 public class MainActivity extends Activity {
 
-    TextView v;
+	TextView v;
+	JSONObject j;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-<<<<<<< HEAD
-=======
-        v = (TextView)findViewById(R.id.textView1);
-        ArrayOfEquipmentDto a = ModalityServiceAgent.getInstance().getService().getEquipments();
-        List<EquipmentDto> lista = a.getEquipmentDto();
-        for (int i=0; i<lista.size();i++) {
-            //JAXBElement<String> element;
-            v.setText(v.getText() + "\n" + lista.get(i).getName().getValue());
-        }
->>>>>>> b9936126dbd7344b84e52d072bb6d0779e198f36
+		setContentView(R.layout.activity_main);
+		v = (TextView) findViewById(R.id.textView1);
+
+		//Modality mod = new Modality();
+
 	}
 
 	@Override
