@@ -26,10 +26,16 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 
 	private ProgressDialog dialog;
 	private Context context;
+	private APIType en;
 
-	public NetworkTasks(Context ctx) {
+	public NetworkTasks(Context ctx, APIType enu) {
 		context = ctx;
 		dialog = new ProgressDialog(context);
+		en = enu;
+	}
+
+	public NetworkTasks(APIType enu) {
+		en = enu;
 	}
 
 	@Override
@@ -44,8 +50,8 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 		try {
 			DefaultHttpClient httpClient = new DefaultHttpClient();
 			HttpPost httpPost = new HttpPost(
-					"http://leia.skip.chalmers.se/jaeensson/JSON-API/Modality.php?action="
-							+ params[0]);
+					"http://leia.skip.chalmers.se/jaeensson/JSON-API/" + en
+							+ ".php?action=" + params[0]);
 
 			HttpResponse httpResponse = httpClient.execute(httpPost);
 			HttpEntity httpEntity = httpResponse.getEntity();

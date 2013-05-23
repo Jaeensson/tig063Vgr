@@ -5,18 +5,18 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.example.tig063vgr.JSONParse;
+import com.example.tig063vgr.APIType;
 import com.example.tig063vgr.NetworkTasks;
 
 public class Modality extends NetworkTasks {
 	private NetworkTasks mMyNetworkTask = null;
 
 	public Modality(Context ctx) {
-		super(ctx);
+		super(ctx, APIType.Modality);
 		if (mMyNetworkTask != null) {
 			return;
 		}
-		mMyNetworkTask = new NetworkTasks(ctx);
+		mMyNetworkTask = new NetworkTasks(ctx, APIType.Modality);
 	}
 
 	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
@@ -47,15 +47,17 @@ public class Modality extends NetworkTasks {
 		return execute("GetMaintenanceProviders");
 	}
 
-	public AsyncTask<String,Void,JSONObject> GetMaintenanceContracts() {
+	public AsyncTask<String, Void, JSONObject> GetMaintenanceContracts() {
 		return execute("GetMaintenanceContracts");
 	}
 
-	public AsyncTask<String,Void,JSONObject> GetTimelineByModalityGroup(String modGroupId) {
+	public AsyncTask<String, Void, JSONObject> GetTimelineByModalityGroup(
+			String modGroupId) {
 		return execute("GetTimelineByModalityGroup&param1=" + modGroupId);
 	}
 
-	public AsyncTask<String,Void,JSONObject> GetTimelineByEquipment(String equipmentId) {
+	public AsyncTask<String, Void, JSONObject> GetTimelineByEquipment(
+			String equipmentId) {
 		return execute("GetTimelineByEquipment&param1=" + equipmentId);
 	}
 
