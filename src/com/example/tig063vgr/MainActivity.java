@@ -1,5 +1,6 @@
 package com.example.tig063vgr;
 
+import android.view.View;
 import org.json.JSONArray;
 
 import com.example.tig063vgr.httprules.Modality;
@@ -29,5 +30,10 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+    public void btnDebugClick(View v) {
+        Modality m = new Modality(this);
+        m.GetModalities();
+    }
 
 }
