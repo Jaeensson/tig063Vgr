@@ -20,8 +20,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		v = (TextView) findViewById(R.id.textView1);
-		Modality mod = new Modality(this);
-		mod.GetOrganizations();
 	}
 
 	@Override
