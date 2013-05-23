@@ -18,17 +18,18 @@ public class Statistics extends NetworkTasks {
 		return execute("GetOrganizations");
 	}
 
-	public AsyncTask<String,Void,JSONObject> GetOrgnizationalUnits() {
+	public AsyncTask<String, Void, JSONObject> GetOrgnizationalUnits() {
 		return execute("GetOrgnizationalUnits");
 	}
 
-	public AsyncTask<String,Void,JSONObject> GetDataPointsByHsaIdentitiesAndDateInterval(String hsaId,
-			String startDate, String endDate) {
+	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentitiesAndDateInterval(
+			String hsaId, String startDate, String endDate) {
 		return execute("GetDataPointsByHsaIdentitiesAndDateInterval&param1="
 				+ hsaId + "&param2=" + startDate + "&param3=" + endDate);
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentities(String hsaId) {
+	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentities(
+			String hsaId) {
 		return execute("GetDataPointsByHsaIdentities&param1=" + hsaId);
 	}
 }

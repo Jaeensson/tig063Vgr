@@ -67,7 +67,7 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					is, "utf-8"),1024);
+					is, "utf-8"), 1024);
 			StringBuilder sb = new StringBuilder();
 			String line = null;
 			while ((line = reader.readLine()) != null) {

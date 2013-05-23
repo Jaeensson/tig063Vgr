@@ -9,7 +9,6 @@ import com.example.tig063vgr.APIType;
 import com.example.tig063vgr.NetworkTasks;
 
 public class WaitTime extends NetworkTasks {
-	private NetworkTasks mMyNetworkTask = null;
 
 	public WaitTime(Context ctx) {
 		super(ctx, APIType.Modality);
