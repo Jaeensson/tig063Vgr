@@ -13,10 +13,6 @@ public class WaitTime extends NetworkTasks {
 
 	public WaitTime(Context ctx) {
 		super(ctx, APIType.Modality);
-		if (mMyNetworkTask != null) {
-			return;
-		}
-		mMyNetworkTask = new NetworkTasks(ctx, APIType.Modality);
 	}
 
 	public AsyncTask<String, Void, JSONObject> GetOrganizations() {

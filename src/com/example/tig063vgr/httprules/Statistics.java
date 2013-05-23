@@ -9,14 +9,9 @@ import com.example.tig063vgr.APIType;
 import com.example.tig063vgr.NetworkTasks;
 
 public class Statistics extends NetworkTasks {
-	private NetworkTasks mMyNetworkTask = null;
 
 	public Statistics(Context ctx) {
 		super(ctx, APIType.Modality);
-		if (mMyNetworkTask != null) {
-			return;
-		}
-		mMyNetworkTask = new NetworkTasks(ctx, APIType.Modality);
 	}
 
 	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
