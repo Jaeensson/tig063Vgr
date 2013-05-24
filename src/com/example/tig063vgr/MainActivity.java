@@ -2,6 +2,7 @@ package com.example.tig063vgr;
 
 import java.util.concurrent.ExecutionException;
 
+import android.os.AsyncTask;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -36,8 +37,10 @@ public class MainActivity extends Activity {
 		sd = (TextView) findViewById(R.id.response);
 		sd.setText("");
 		try {
-			JSONArray ar = m.GetOrganizations().get();
-			for (int i = 0; i < ar.length(); i++) {
+			AsyncTask<String, Void, JSONArray> lolz = m.GetOrganizations();
+            //lolz.wait();
+            JSONArray ar = lolz.get();
+            for (int i = 0; i < ar.length(); i++) {
 				String stringJson = ar.getJSONObject(i).get("Name").toString();
 				sd.setText(sd.getText() + stringJson + "\n");
 			}
