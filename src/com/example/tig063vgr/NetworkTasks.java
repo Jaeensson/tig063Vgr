@@ -55,9 +55,9 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					conn.getInputStream()));
 
-			int val = 0;
-			while ((val = reader.read()) != -1) {
-				content += (char) val;
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				content += line;
 			}
 
 			/*
