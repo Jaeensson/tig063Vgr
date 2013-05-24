@@ -1,17 +1,13 @@
 package com.example.tig063vgr;
 
-import java.util.concurrent.ExecutionException;
-
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
-
-import com.example.tig063vgr.httprules.Modality;
 
 public class MainActivity extends Activity {
 
@@ -32,20 +28,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void btnDebugClick(View v) {
-		Modality m = new Modality(this);
-		sd = (TextView) findViewById(R.id.response);
-		sd.setText("");
-		try {
-			JSONArray ar = m.GetOrganizations().get();
-			for (int i = 0; i < ar.length(); i++) {
-				String stringJson = ar.getJSONObject(i).get("Name").toString();
-				sd.setText(sd.getText() + stringJson + "\n");
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		} catch (JSONException e) {
-			e.printStackTrace();
-		} 	}
+		Intent intent = new Intent(this, LoginActivity.class);
+		startActivity(intent);
+	}
 }
