@@ -1,6 +1,6 @@
 package com.example.tig063vgr.httprules;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -14,23 +14,23 @@ public class WaitTime extends NetworkTasks {
 		super(ctx, APIType.Modality);
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
+	public AsyncTask<String, Void, JSONArray> GetOrganizations() {
 		return execute("GetOrganizations");
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetOrgnizationalUnits() {
+	public AsyncTask<String, Void, JSONArray> GetOrgnizationalUnits() {
 		return execute("GetOrgnizationalUnits");
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetStudyTypes() {
+	public AsyncTask<String, Void, JSONArray> GetStudyTypes() {
 		return execute("GetStudyTypes");
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetStudies() {
+	public AsyncTask<String, Void, JSONArray> GetStudies() {
 		return execute("GetStudies");
 	}
 
-	public AsyncTask<String, Void, JSONObject> NearLatitudeLongitudeByStudy(
+	public AsyncTask<String, Void, JSONArray> NearLatitudeLongitudeByStudy(
 			String studyId, String latitude, String longitude,
 			String radiusInMetres) {
 		return execute("NearLatitudeLongitudeByStudy&param1=" + studyId

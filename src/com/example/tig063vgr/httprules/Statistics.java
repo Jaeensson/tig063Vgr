@@ -1,6 +1,6 @@
 package com.example.tig063vgr.httprules;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -14,21 +14,21 @@ public class Statistics extends NetworkTasks {
 		super(ctx, APIType.Modality);
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetOrganizations() {
+	public AsyncTask<String, Void, JSONArray> GetOrganizations() {
 		return execute("GetOrganizations");
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetOrgnizationalUnits() {
+	public AsyncTask<String, Void, JSONArray> GetOrgnizationalUnits() {
 		return execute("GetOrgnizationalUnits");
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentitiesAndDateInterval(
+	public AsyncTask<String, Void, JSONArray> GetDataPointsByHsaIdentitiesAndDateInterval(
 			String hsaId, String startDate, String endDate) {
 		return execute("GetDataPointsByHsaIdentitiesAndDateInterval&param1="
 				+ hsaId + "&param2=" + startDate + "&param3=" + endDate);
 	}
 
-	public AsyncTask<String, Void, JSONObject> GetDataPointsByHsaIdentities(
+	public AsyncTask<String, Void, JSONArray> GetDataPointsByHsaIdentities(
 			String hsaId) {
 		return execute("GetDataPointsByHsaIdentities&param1=" + hsaId);
 	}

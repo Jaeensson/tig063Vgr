@@ -5,12 +5,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLConnection;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,9 +22,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
+public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 	static InputStream is = null;
-	static JSONObject jObj = null;
+	static JSONArray jObj = null;
 	static String json = "";
 
 	private ProgressDialog dialog;
@@ -45,10 +48,21 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 	}
 
 	@Override
-	protected JSONObject doInBackground(final String... params) {
+	protected JSONArray doInBackground(final String... params) {
 
-		try {
-			DefaultHttpClient httpClient = new DefaultHttpClient();
+        String content = "";
+
+        try {
+            URL url = new URL("http://leia.skip.chalmers.se/jaeensson/JSON-API/" + en + ".php?action=" + params[0]);
+            URLConnection conn = url.openConnection();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+            int val = 0;
+            while ((val = reader.read()) != -1) {
+                content += (char) val;
+            }
+
+			/*DefaultHttpClient httpClient = new DefaultHttpClient();
 			HttpPost httpPost = new HttpPost(
 					"http://leia.skip.chalmers.se/jaeensson/JSON-API/" + en
 							+ ".php?action=" + params[0]);
@@ -56,31 +70,22 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 			HttpResponse httpResponse = httpClient.execute(httpPost);
 			HttpEntity httpEntity = httpResponse.getEntity();
 			is = httpEntity.getContent();
+*/
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
 
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					is, "utf-8"), 1024);
-			StringBuilder sb = new StringBuilder();
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line + "\n");
-			}
-			is.close();
-			json = sb.toString();
 		} catch (Exception e) {
 			Log.e("BufferFel", "Error" + e.toString());
 		}
 
 		try {
-			jObj = new JSONObject(json);
+			jObj = new JSONArray(content);
 		} catch (JSONException e) {
 			Log.e("JSONParser", "Error" + e.toString());
 		}
@@ -90,7 +95,7 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONObject> {
 	}
 
 	@Override
-	protected void onPostExecute(final JSONObject result) {
+	protected void onPostExecute(final JSONArray result) {
 		if (dialog.isShowing()) {
 			dialog.dismiss();
 		}

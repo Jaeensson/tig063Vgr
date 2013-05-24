@@ -1,5 +1,6 @@
 package com.example.tig063vgr;
 
+import android.util.Log;
 import android.view.View;
 import org.json.JSONArray;
 
@@ -9,6 +10,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
+import org.json.JSONException;
+
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends Activity {
 
@@ -31,7 +35,18 @@ public class MainActivity extends Activity {
 
     public void btnDebugClick(View v) {
         Modality m = new Modality(this);
-        m.GetModalities();
+        try {
+            JSONArray ar = m.GetOrganizations().get();
+            for (int i = 0; i<ar.length(); i++) {
+                Log.d("",ar.getJSONObject(i).get("Name").toString());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
