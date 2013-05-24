@@ -7,6 +7,7 @@ import android.os.Handler;
 
 import com.example.tig063vgr.MainActivity;
 import com.example.tig063vgr.R;
+import com.example.tig063vgr.SessionManager;
 
 public class SplashScreenActivity extends Activity {
 
@@ -25,9 +26,9 @@ public class SplashScreenActivity extends Activity {
 				finish();
 
 				if (!mIsBackButtonPressed) {
-					Intent intent = new Intent(SplashScreenActivity.this,
-							MainActivity.class);
-					SplashScreenActivity.this.startActivity(intent);
+					SessionManager isLogged = new SessionManager(
+							getApplicationContext());
+					isLogged.checkLogin();
 				}
 
 			}

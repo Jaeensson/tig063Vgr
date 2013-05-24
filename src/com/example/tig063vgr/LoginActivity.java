@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+
 public class LoginActivity extends Activity {
 	private static final String[] DUMMY_CREDENTIALS = new String[] {
 			"adam@adam.se:adam", "rasmis@rasmis.se:rasmis" };
@@ -179,7 +180,6 @@ public class LoginActivity extends Activity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			// TODO: hämta login
-
 			try {
 				// ta bort när nätverk är med
 				Thread.sleep(2000);
@@ -202,6 +202,11 @@ public class LoginActivity extends Activity {
 			showProgress(false);
 
 			if (success) {
+				SessionManager session = new SessionManager(
+						getApplicationContext());
+
+				session.createLoginSession(mPassword, mEmail);
+
 				finish();
 			} else {
 				mPasswordView
