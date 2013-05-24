@@ -206,7 +206,7 @@ public class LoginActivity extends Activity {
 						getApplicationContext());
 
 				session.createLoginSession(mPassword, mEmail);
-
+				session.checkLogin();
 				finish();
 			} else {
 				mPasswordView

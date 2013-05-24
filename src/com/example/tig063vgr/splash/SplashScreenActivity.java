@@ -1,11 +1,9 @@
 package com.example.tig063vgr.splash;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.tig063vgr.MainActivity;
 import com.example.tig063vgr.R;
 import com.example.tig063vgr.SessionManager;
 

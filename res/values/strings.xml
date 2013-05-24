@@ -2,9 +2,10 @@
 <resources>
 
     <string name="app_name">TIG063VGR</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Inställningar</string>
     <string name="hello_world">Hello world!</string>
     <string name="btnDebugText">Debug</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="action_logout">Logga ut</string>
 
 </resources>
