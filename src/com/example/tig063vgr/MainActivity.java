@@ -1,29 +1,27 @@
 package com.example.tig063vgr;
 
-import android.util.Log;
-import android.view.View;
-import org.json.JSONArray;
+import java.util.concurrent.ExecutionException;
 
-import com.example.tig063vgr.httprules.Modality;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
-import org.json.JSONException;
 
-import java.util.concurrent.ExecutionException;
+import com.example.tig063vgr.httprules.Modality;
 
 public class MainActivity extends Activity {
 
-	TextView v;
+	TextView sd;
 	public static JSONArray JSONResult;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		v = (TextView) findViewById(R.id.textView1);
 	}
 
 	@Override
@@ -33,20 +31,21 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-    public void btnDebugClick(View v) {
-        Modality m = new Modality(this);
-        try {
-            JSONArray ar = m.GetOrganizations().get();
-            for (int i = 0; i<ar.length(); i++) {
-                Log.d("",ar.getJSONObject(i).get("Name").toString());
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
+	public void btnDebugClick(View v) {
+		Modality m = new Modality(this);
+		sd = (TextView) findViewById(R.id.response);
+		sd.setText("");
+		try {
+			JSONArray ar = m.GetOrganizations().get();
+			for (int i = 0; i < ar.length(); i++) {
+				String stringJson = ar.getJSONObject(i).get("Name").toString();
+				sd.setText(sd.getText() + stringJson + "\n");
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		} 	}
 }
