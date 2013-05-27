@@ -66,4 +66,5 @@ public class MainActivity extends Activity {
 		menu.setMenu(R.layout.menu);
 
 	}
+
 }
