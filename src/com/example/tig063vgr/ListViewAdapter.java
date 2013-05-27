@@ -1,31 +1,58 @@
 package com.example.tig063vgr;
 
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by rasmus on 2013-05-27.
  */
 public class ListViewAdapter extends BaseAdapter{
 
-    @Override
+    private Activity activity;
+    private ArrayList<HashMap<String,String>> data;
+    private static LayoutInflater inflater=null;
+
+    public ListViewAdapter(Activity a, ArrayList<HashMap<String,String>> d) {
+        activity = a;
+        data=d;
+        inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+     }
+
     public int getCount() {
-        return 0;
+        return data.size();
     }
 
-    @Override
-    public Object getItem(int i) {
-        return null;
+    public Object getItem(int position) {
+        return position;
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
+    public long getItemId(int position) {
+        return position;
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View vi=convertView;
+        if(convertView==null)
+            vi = inflater.inflate(R.layout.listitem, null);
+
+        TextView large =(TextView) vi.findViewById(R.id.txtLarge);
+        TextView small =(TextView) vi.findViewById(R.id.txtSmall);
+
+
+        HashMap< String, String> song = new HashMap<String, String>();
+        song = data.get(position);
+
+        large.setText(song.get("large"));
+        small.setText(song.get("small"));
+        return vi;
     }
 }
