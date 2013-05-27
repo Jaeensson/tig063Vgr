@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 public class MainActivity extends Activity {
 
 	TextView sd;
@@ -18,6 +20,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		initSliding();
+
 	}
 
 	@Override
@@ -32,17 +36,34 @@ public class MainActivity extends Activity {
 		// Handle item selection
 		switch (item.getItemId()) {
 		case R.id.action_logout:
-			SessionManager session = new SessionManager(this);
+			SessionManager session = new SessionManager(getApplicationContext());
 			session.logoutUser();
-//			finish();
+			// After logout redirect user to Loing Activity
+			Intent logOut = new Intent(this, LoginActivity.class);
+			// i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(logOut);
+			finish();
 			return true;
 		case R.id.action_settings:
-			Intent i = new Intent(this, SettingsActivity.class);
-			startActivity(i);
+			Intent settings = new Intent(this, SettingsActivity.class);
+			startActivity(settings);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
+	public void initSliding() {
+
+		SlidingMenu menu = new SlidingMenu(this);
+		menu.setMode(SlidingMenu.LEFT);
+		menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+		menu.setShadowWidthRes(R.dimen.shadow_width);
+		menu.setShadowDrawable(R.drawable.shadow);
+		menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+		menu.setFadeDegree(0.35f);
+		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+		menu.setMenu(R.layout.menu);
+
+	}
 }
