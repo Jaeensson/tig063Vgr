@@ -12,13 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends Activity {
 
-	private TextView sd;
 	private SlidingMenu menu;
 	public static JSONArray JSONResult;
 	private ListView mainListView;
