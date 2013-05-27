@@ -46,6 +46,14 @@
             android:name="com.example.tig063vgr.SettingsActivity"
             android:label="@string/settings_title" >
         </activity>
+        <activity
+            android:name="com.example.tig063vgr.Rapport"
+            android:label="@string/title_activity_rapport" >
+        </activity>
+        <activity
+            android:name="com.example.tig063vgr.UiInit"
+            android:label="@string/title_activity_ui_init" >
+        </activity>
     </application>
 
 </manifest>

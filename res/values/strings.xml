@@ -10,5 +10,7 @@
     <string name="settings_title">Inställningar</string>
     <string name="firstViewNFC">Skanna</string>
     <string name="emulateNfc">Emulate NFC</string>
+    <string name="title_activity_rapport">Rapport</string>
+    <string name="title_activity_ui_init">UiInit</string>
 
 </resources>
