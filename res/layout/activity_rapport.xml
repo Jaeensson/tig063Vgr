@@ -8,4 +8,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Rapport" >
 
+    <LinearLayout
+        android:id="@+id/hej"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/listRapport"
+            android:layout_width="match_parent"
+            android:layout_height="312dp" >
+        </ListView>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hej"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/titleSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hej"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/rapport_prioritet" />
+
+    <TextView
+        android:id="@+id/sliderOption1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sliderOption2"
+        android:layout_alignBottom="@+id/sliderOption2"
+        android:layout_marginRight="28dp"
+        android:layout_toLeftOf="@+id/titleSlider"
+        android:text="@string/rapport_lowSeekbar" />
+
+    <TextView
+        android:id="@+id/sliderOption2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleSlider"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/titleSlider"
+        android:text="@string/rapport_emergencySeekbar" />
+
 </RelativeLayout>

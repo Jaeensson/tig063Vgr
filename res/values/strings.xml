@@ -12,5 +12,8 @@
     <string name="emulateNfc">Emulate NFC</string>
     <string name="title_activity_rapport">Rapport</string>
     <string name="title_activity_ui_init">UiInit</string>
+    <string name="rapport_prioritet">Prioritet på ärendet</string>
+    <string name="rapport_lowSeekbar">Låg</string>
+    <string name="rapport_emergencySeekbar">Akut</string>
 
 </resources>

@@ -26,6 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="49dp"
+        android:onClick="buttonEmulate"
         android:text="@string/emulateNfc" />
 
 </RelativeLayout>

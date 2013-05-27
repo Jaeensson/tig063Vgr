@@ -1,8 +1,5 @@
 package com.example.tig063vgr;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,9 +18,10 @@ public class UiInit extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		initSliding();
-		populateListMenu();
+		// populateListMenu();
 	}
 
 	@Override
@@ -69,20 +67,20 @@ public class UiInit extends Activity {
 
 	}
 
-	public void populateListMenu() {
-		mainListView = (ListView) findViewById(R.id.menuList);
-
-		String[] menyItems = new String[] { "Adam", "Rasmus", "Jonathan",
-				"Patrik", "David", "John", "Linnea", "Gud" };
-		ArrayList<String> menuList = new ArrayList<String>();
-		menuList.addAll(Arrays.asList(menyItems));
-
-		listAdapter = new ArrayAdapter<String>(this, R.layout.listitem,
-				menuList);
-
-		listAdapter.add("Jesus");
-
-		mainListView.setAdapter(listAdapter);
-	}
+	/*
+	 * public void populateListMenu() { mainListView = (ListView)
+	 * findViewById(R.id.menuList);
+	 * 
+	 * String[] menyItems = new String[] { "Adam", "Rasmus", "Jonathan",
+	 * "Patrik", "David", "John", "Linnea", "Gud" }; ArrayList<String> menuList
+	 * = new ArrayList<String>(); menuList.addAll(Arrays.asList(menyItems));
+	 * 
+	 * listAdapter = new ArrayAdapter<String>(this, R.layout.listitem_ui,
+	 * menuList);
+	 * 
+	 * listAdapter.add("Jesus");
+	 * 
+	 * mainListView.setAdapter(listAdapter); }
+	 */
 
 }

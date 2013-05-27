@@ -10,12 +10,10 @@ public class MainActivity extends UiInit {
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_main);
 		super.onCreate(savedInstanceState);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 	}
 
 	public void buttonEmulate(View v) {
-
 		Intent logOut = new Intent(this, Rapport.class);
 		startActivity(logOut);
 	}
