@@ -1,21 +1,15 @@
 package com.example.tig063vgr;
 
-import org.json.JSONArray;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends Activity {
 
-	private TextView sd;
 	private SlidingMenu menu;
-	public static JSONArray JSONResult;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
