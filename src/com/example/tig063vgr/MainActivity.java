@@ -13,13 +13,15 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class MainActivity extends Activity {
 
-	TextView sd;
-	public static JSONArray JSONResult;
+	private TextView sd;
+    private SlidingMenu menu;
+    public static JSONArray JSONResult;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 		initSliding();
 
 	}
@@ -35,6 +37,9 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
 		switch (item.getItemId()) {
+        case android.R.id.home:
+            menu.toggle();
+            return true;
 		case R.id.action_logout:
 			SessionManager session = new SessionManager(getApplicationContext());
 			session.logoutUser();
@@ -50,12 +55,14 @@ public class MainActivity extends Activity {
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
+
 		}
 	}
 
+
 	public void initSliding() {
 
-		SlidingMenu menu = new SlidingMenu(this);
+		menu = new SlidingMenu(this);
 		menu.setMode(SlidingMenu.LEFT);
 		menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 		menu.setShadowWidthRes(R.dimen.shadow_width);
