@@ -67,20 +67,19 @@ public class UiInit extends Activity {
 
 	}
 
-	/*
-	 * public void populateListMenu() { mainListView = (ListView)
-	 * findViewById(R.id.menuList);
-	 * 
-	 * String[] menyItems = new String[] { "Adam", "Rasmus", "Jonathan",
-	 * "Patrik", "David", "John", "Linnea", "Gud" }; ArrayList<String> menuList
-	 * = new ArrayList<String>(); menuList.addAll(Arrays.asList(menyItems));
-	 * 
-	 * listAdapter = new ArrayAdapter<String>(this, R.layout.listitem_ui,
-	 * menuList);
-	 * 
-	 * listAdapter.add("Jesus");
-	 * 
-	 * mainListView.setAdapter(listAdapter); }
-	 */
+
+	 public void populatelistmenu() {
+
+       /*
+       mainlistview = (ListView) findviewbyid(R.id.menulist);
+       String[] menyitems = new String[] { "adam", "rasmus", "jonathan","patrik", "david", "john", "linnea", "gud" };
+       ArrayList<String> menulist = new ArrayList<String>();
+       menulist.addAll(Arrays.aslist(menyitems));
+       listadapter = new ArrayAdapter<String>(this, R.layout.listitem_ui, menulist);
+       listadapter.add("jesus");
+       mainlistview.setadapter(listadapter);
+        */
+     }
+
 
 }

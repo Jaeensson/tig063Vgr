@@ -17,10 +17,9 @@
         <ListView
             android:id="@+id/listRapport"
             android:layout_width="match_parent"
-            android:layout_height="392dp" 
-            android:scrollingCache="true"
+            android:layout_height="392dp"
             android:scrollbars="vertical"
-            >
+            android:scrollingCache="true" >
         </ListView>
     </LinearLayout>
 
