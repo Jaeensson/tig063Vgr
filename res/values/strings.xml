@@ -8,5 +8,7 @@
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="action_logout">Logga ut</string>
     <string name="settings_title">Inställningar</string>
+    <string name="firstViewNFC">Skanna</string>
+    <string name="emulateNfc">Emulate NFC</string>
 
 </resources>

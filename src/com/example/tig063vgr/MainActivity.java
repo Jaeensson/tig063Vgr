@@ -1,5 +1,8 @@
 package com.example.tig063vgr;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.json.JSONArray;
 
 import android.app.Activity;
@@ -7,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -16,6 +21,8 @@ public class MainActivity extends Activity {
 	private TextView sd;
 	private SlidingMenu menu;
 	public static JSONArray JSONResult;
+	private ListView mainListView;
+	private ArrayAdapter<String> listAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		initSliding();
+		populateListMenu();
 
 	}
 
@@ -71,6 +79,22 @@ public class MainActivity extends Activity {
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 		menu.setMenu(R.layout.menu);
 
+	}
+
+	public void populateListMenu() {
+		mainListView = (ListView) findViewById(R.id.menuList);
+
+		String[] menyItems = new String[] { "Adam", "Rasmus", "Jonathan",
+				"Patrik", "David", "John", "Linnea", "Gud" };
+		ArrayList<String> menuList = new ArrayList<String>();
+		menuList.addAll(Arrays.asList(menyItems));
+
+		listAdapter = new ArrayAdapter<String>(this, R.layout.listitem,
+				menuList);
+
+		listAdapter.add("Jesus");
+
+		mainListView.setAdapter(listAdapter);
 	}
 
 }
