@@ -10,10 +10,10 @@
     <string name="settings_title">Inställningar</string>
     <string name="firstViewNFC">Skanna</string>
     <string name="emulateNfc">Emulate NFC</string>
-    <string name="title_activity_rapport">Rapport</string>
+    <string name="title_activity_rapport">Felrapport</string>
     <string name="title_activity_ui_init">UiInit</string>
     <string name="rapport_prioritet">Prioritet på ärendet</string>
     <string name="rapport_lowSeekbar">Låg</string>
     <string name="rapport_emergencySeekbar">Akut</string>
-
+	<string name="listViewHeader">Maskininformation</string>
 </resources>

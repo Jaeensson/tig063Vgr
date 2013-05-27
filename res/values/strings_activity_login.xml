@@ -3,7 +3,7 @@
     <string name="title_activity_login">Logga in</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Epost</string>
+    <string name="prompt_HSAId">HSAId</string>
     <string name="prompt_password">Lösenord</string>
     <string name="action_sign_in_register"><b>Logga in</b></string>
     <string name="action_sign_in_short">Logga in</string>
