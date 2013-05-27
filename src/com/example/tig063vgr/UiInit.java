@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
+import java.util.ArrayList;
+
 public class UiInit extends Activity {
 	private ListView mainListView;
 	private ArrayAdapter<String> listAdapter;
