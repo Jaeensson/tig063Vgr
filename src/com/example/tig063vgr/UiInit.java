@@ -24,7 +24,7 @@ public class UiInit extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		initSliding();
-		// populateListMenu();
+		populateListMenu();
 	}
 
 	@Override
@@ -71,18 +71,15 @@ public class UiInit extends Activity {
 	}
 
 
-	 public void populatelistmenu() {
+	 public void populateListMenu() {
 
-       /*
-       mainlistview = (ListView) findviewbyid(R.id.menulist);
-       String[] menyitems = new String[] { "adam", "rasmus", "jonathan","patrik", "david", "john", "linnea", "gud" };
-       ArrayList<String> menulist = new ArrayList<String>();
-       menulist.addAll(Arrays.aslist(menyitems));
-       listadapter = new ArrayAdapter<String>(this, R.layout.listitem_ui, menulist);
-       listadapter.add("jesus");
-       mainlistview.setadapter(listadapter);
-        */
+         mainListView = (ListView) findViewById(R.id.menuList);
+         String[] menyitems = new String[] { "adam", "rasmus", "jonathan","patrik", "david", "john", "linnea", "gud" };
+         ArrayList<MenuListItem> list = new ArrayList<MenuListItem>();
+         list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon));
+         list.add(new MenuListItem("Adam", R.drawable.telephone_icon));
+         MenuListAdapter a = new MenuListAdapter(this, list);
+
+         mainListView.setAdapter(a);
      }
-
-
 }
