@@ -43,7 +43,6 @@ public class MenuListAdapter extends BaseAdapter {
 
         TextView txt = (TextView) vi.findViewById(R.id.menuText);
         ImageView img = (ImageView) vi.findViewById(R.id.menuImage);
-        View asdasd = parent.findViewById(R.id.menuText);
         MenuListItem i = data.get(position);
         txt.setText(i.getText());
         img.setImageResource(i.getResId());
