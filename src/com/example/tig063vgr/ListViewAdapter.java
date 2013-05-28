@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-/**
- * Created by rasmus on 2013-05-27.
- */
+
 public class ListViewAdapter extends BaseAdapter {
 
 	private Activity activity;
@@ -21,6 +19,7 @@ public class ListViewAdapter extends BaseAdapter {
 	private static LayoutInflater inflater = null;
 
 	public ListViewAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
+        super();
 		activity = a;
 		data = d;
 		inflater = (LayoutInflater) activity

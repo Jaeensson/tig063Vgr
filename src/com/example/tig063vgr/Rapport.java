@@ -22,16 +22,16 @@ public class Rapport extends UiInit {
 		rapportList.addHeaderView(header);
 
 		// Populate hashmap
-		ArrayList<HashMap<String, String>> customAdapter = new ArrayList<HashMap<String, String>>();
+		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 		HashMap<String, String> item = new HashMap<String, String>();
 		item.put("large", "Utrustning ID");
 		item.put("small", "EQUIPMENT_ID");
-		customAdapter.add(item);
+		list.add(item);
 
 		item = new HashMap<String, String>();
 		item.put("large", "Namn");
 		item.put("small", "NAME");
-		customAdapter.add(item);
+		list.add(item);
 
 		item = new HashMap<String, String>();
 		item.put("large", "Tillverkare");
@@ -40,24 +40,24 @@ public class Rapport extends UiInit {
 				"NASA" };
 		Random r = new Random();
 		item.put("small", menyItems[r.nextInt(menyItems.length)]);
-		customAdapter.add(item);
+		list.add(item);
 
 		item = new HashMap<String, String>();
 		item.put("large", "Plats");
 		item.put("small", "LOCATION_ID");
-		customAdapter.add(item);
+		list.add(item);
 
 		item = new HashMap<String, String>();
 		item.put("large", "Status");
 		item.put("small", "STAUTS_ID");
-		customAdapter.add(item);
+		list.add(item);
 
 		item = new HashMap<String, String>();
 		item.put("large", "Modality Group");
 		item.put("small", "MOD_GROUP");
-		customAdapter.add(item);
+		list.add(item);
 
-		ListViewAdapter adapter = new ListViewAdapter(this, customAdapter);
+		ListViewAdapter adapter = new ListViewAdapter(this, list);
 		rapportList.setAdapter(adapter);
 	}
 

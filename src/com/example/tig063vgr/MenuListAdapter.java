@@ -18,18 +18,18 @@ public class MenuListAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
 
     public MenuListAdapter(Activity a, ArrayList<MenuListItem> d) {
+        super();
         activity = a;
         data = d;
-        inflater = (LayoutInflater) activity
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     public int getCount() {
         return data.size();
     }
 
-    public Object getItem(int position) {
-        return position;
+    public MenuListItem getItem(int position) {
+        return data.get(position);
     }
 
     public long getItemId(int position) {
@@ -39,11 +39,11 @@ public class MenuListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
         if (convertView == null)
-            vi = inflater.inflate(R.layout.listitem, null);
+            vi = inflater.inflate(R.layout.listitem_menu, null);
 
         TextView txt = (TextView) vi.findViewById(R.id.menuText);
         ImageView img = (ImageView) vi.findViewById(R.id.menuImage);
-
+        View asdasd = parent.findViewById(R.id.menuText);
         MenuListItem i = data.get(position);
         txt.setText(i.getText());
         img.setImageResource(i.getResId());
