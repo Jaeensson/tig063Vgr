@@ -23,40 +23,35 @@
         </ListView>
     </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hej"
-        android:layout_alignParentBottom="true" />
-
-    <TextView
+	<TextView
         android:id="@+id/titleSlider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hej"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/rapport_prioritet" />
-
-    <TextView
-        android:id="@+id/sliderOption1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/sliderOption2"
-        android:layout_alignBottom="@+id/sliderOption2"
-        android:layout_marginRight="28dp"
-        android:layout_toLeftOf="@+id/titleSlider"
-        android:text="@string/rapport_lowSeekbar" />
-
-    <TextView
-        android:id="@+id/sliderOption2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titleSlider"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/titleSlider"
-        android:text="@string/rapport_emergencySeekbar" />
+        android:text="@string/rapport_prioritet"
+        android:layout_below="@+id/hej" android:layout_centerHorizontal="true"/>
+	<RadioGroup
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:layout_alignBottom="@+id/radioButton"
+			android:layout_toRightOf="@+id/radioButton" android:layout_below="@+id/titleSlider">
+		<LinearLayout
+				android:weightSum="100"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+			<RadioButton
+					android:layout_weight="85"
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent"
+					android:text="Låg"
+					android:id="@+id/rbLow" android:layout_alignParentBottom="true" android:layout_alignLeft="@+id/hej"
+					/>
+			<RadioButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Akut"
+					android:id="@+id/rbEmergency"
+					android:layout_alignTop="@+id/radioButton" android:layout_alignRight="@+id/hej" android:checked="false"
+					android:layout_gravity="right|center_vertical"/>
+		</LinearLayout>
+	</RadioGroup>
 
 </RelativeLayout>
