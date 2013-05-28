@@ -3,5 +3,7 @@
 
     <color name="emphasis">#31b6e7</color>
     <color name="bg_gray">#cecbce</color>
+    <color name="slidingMenu_grey">#1e1e1e</color>
+    <color name="white">#ffffff</color>
 
 </resources>

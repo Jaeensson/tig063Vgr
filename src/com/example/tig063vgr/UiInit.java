@@ -1,5 +1,7 @@
 package com.example.tig063vgr;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-
-import java.util.ArrayList;
 
 public class UiInit extends Activity {
 	private ListView mainListView;
@@ -69,16 +69,14 @@ public class UiInit extends Activity {
 
 	}
 
+	public void populateListMenu() {
 
-	 public void populateListMenu() {
+		mainListView = (ListView) findViewById(R.id.menuList);
+		ArrayList<MenuListItem> list = new ArrayList<MenuListItem>();
+		list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon));
+		list.add(new MenuListItem("Adam", R.drawable.telephone_icon));
+		MenuListAdapter a = new MenuListAdapter(this, list);
 
-         mainListView = (ListView) findViewById(R.id.menuList);
-         String[] menyitems = new String[] { "adam", "rasmus", "jonathan","patrik", "david", "john", "linnea", "gud" };
-         ArrayList<MenuListItem> list = new ArrayList<MenuListItem>();
-         list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon));
-         list.add(new MenuListItem("Adam", R.drawable.telephone_icon));
-         MenuListAdapter a = new MenuListAdapter(this, list);
-
-         mainListView.setAdapter(a);
-     }
+		mainListView.setAdapter(a);
+	}
 }
