@@ -28,16 +28,19 @@ public class UiInit extends Activity {
 
 		initSliding();
 		populateListMenu();
-        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //view.findViewById(R.id.)
-                Log.d("", view.getId() + "");
-                String number = "tel:0767772025";
-                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(number));
-                startActivity(callIntent);
-            }
-        });
+		mainListView
+				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+					@Override
+					public void onItemClick(AdapterView<?> adapterView,
+							View view, int i, long l) {
+						// view.findViewById(R.id.)
+						Log.d("", view.getId() + "");
+						String number = "tel:0767772025";
+						Intent callIntent = new Intent(Intent.ACTION_CALL, Uri
+								.parse(number));
+						startActivity(callIntent);
+					}
+				});
 	}
 
 	@Override
@@ -90,7 +93,9 @@ public class UiInit extends Activity {
 		list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon));
 		list.add(new MenuListItem("Adam", R.drawable.telephone_icon));
 		MenuListAdapter a = new MenuListAdapter(this, list);
-
+		View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
+				null);
+		mainListView.addHeaderView(header);
 		mainListView.setAdapter(a);
 	}
 }

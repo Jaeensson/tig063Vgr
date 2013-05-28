@@ -15,5 +15,7 @@
     <string name="rapport_prioritet">Prioritet på ärendet</string>
     <string name="rapport_lowSeekbar">Låg</string>
     <string name="rapport_emergencySeekbar">Akut</string>
-	<string name="listViewHeader">Maskininformation</string>
+    <string name="listViewHeader">Maskininformation</string>
+    <string name="slidingmenu_header_kontakt">Kontakt</string>
+
 </resources>
