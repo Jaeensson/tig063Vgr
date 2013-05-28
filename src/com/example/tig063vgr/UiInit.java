@@ -2,9 +2,13 @@ package com.example.tig063vgr;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,6 +28,16 @@ public class UiInit extends Activity {
 
 		initSliding();
 		populateListMenu();
+        mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //view.findViewById(R.id.)
+                Log.d("", view.getId() + "");
+                String number = "tel:0767772025";
+                Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(number));
+                startActivity(callIntent);
+            }
+        });
 	}
 
 	@Override
