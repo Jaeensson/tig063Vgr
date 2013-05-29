@@ -30,12 +30,6 @@
         android:layout_below="@+id/hej"
         android:layout_centerHorizontal="true"
         android:text="@string/rapport_prioritet" />
-		<LinearLayout
-			android:id="@+id/hej2"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		>
-		</LinearLayout>
 	<RadioGroup
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
@@ -55,4 +49,16 @@
 		    android:text="Akut" />
 
 	</RadioGroup>
+	<Button
+			android:onClick="btnCameraClick"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Kamera"
+			android:id="@+id/btnCamera" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+	<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView" android:layout_alignTop="@+id/btnCamera"
+			android:layout_toLeftOf="@+id/titleSlider"/>
 </RelativeLayout>

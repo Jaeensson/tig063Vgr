@@ -4,14 +4,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 public class Rapport extends UiInit {
 
-	@Override
+    private static final int PICTURE_RESULT = 1337;
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_rapport);
 		super.onCreate(savedInstanceState);
@@ -61,6 +68,25 @@ public class Rapport extends UiInit {
 		rapportList.setAdapter(adapter);
 	}
 
+    public void btnCameraClick (View v) {
+        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        this.startActivityForResult(camera, PICTURE_RESULT);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int result, Intent intent) {
+        super.onActivityResult(requestCode, result, intent);
+        if (requestCode == PICTURE_RESULT){
+            if (result == Activity.RESULT_OK){
+                Bundle b = intent.getExtras();
+                Bitmap bmp = (Bitmap) b.get("data");
+                if (bmp != null) {
+                    ImageView imageView = (ImageView) findViewById(R.id.imageView);
+                    imageView.setImageBitmap(bmp);
+                    imageView.invalidate();
+                }
+            }
+        }
+    }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.rapport, menu);

@@ -82,7 +82,6 @@ public class UiInit extends Activity {
 		menu.setFadeDegree(0.35f);
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 		menu.setMenu(R.layout.menu);
-
 	}
 
 	public void populateListMenu() {
