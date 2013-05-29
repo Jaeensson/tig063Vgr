@@ -21,12 +21,11 @@
 
         <TextView
             android:id="@+id/login_status_message"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-light"
-            android:inputType="textWebEmailAddress"
             android:text="@string/login_progress_signing_in"
-            android:layout_width="fill_parent"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
