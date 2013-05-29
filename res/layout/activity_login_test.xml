@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-light"
+            android:gravity="center"
             android:text="@string/login_progress_signing_in"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
@@ -61,7 +62,7 @@
             android:layout_above="@+id/email"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="94dp"
-            android:text="Inloggning"
+            android:text="@string/login_header"
             android:textSize="37sp" />
 
         <TextView
@@ -72,7 +73,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="31dp"
             android:layout_marginTop="32dp"
-            android:text="VGR"
+            android:text="@string/login_headin_vgr"
             android:textSize="25sp"
             android:textStyle="bold" />
 

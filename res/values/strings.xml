@@ -17,5 +17,8 @@
     <string name="rapport_emergencySeekbar">Akut</string>
     <string name="listViewHeader">Maskininformation</string>
     <string name="slidingmenu_header_kontakt">Kontakt</string>
+    <string name="login_headin_vgr">VGR</string>
+        <string name="login_header">VGR</string>
+    
 
 </resources>

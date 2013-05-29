@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 public class Rapport extends UiInit {
