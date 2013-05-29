@@ -92,5 +92,4 @@ public class Rapport extends UiInit {
 		getMenuInflater().inflate(R.menu.rapport, menu);
 		return true;
 	}
-
 }
