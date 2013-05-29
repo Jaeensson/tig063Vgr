@@ -30,35 +30,28 @@
         android:layout_below="@+id/hej"
         android:layout_centerHorizontal="true"
         android:text="@string/rapport_prioritet" />
-	<RadioGroup
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:layout_below="@+id/titleSlider" android:orientation="horizontal" android:weightSum="100">
-		<RadioButton
-			android:layout_weight="85"
-	        android:id="@+id/rbLow"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:checked="false"
-	        android:text="Låg" />
-		<RadioButton
-		    android:id="@+id/rbEmergency"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:checked="false"
-		    android:text="Akut" />
 
-	</RadioGroup>
-	<Button
-			android:onClick="btnCameraClick"
-			style="?android:attr/buttonStyleSmall"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Kamera"
-			android:id="@+id/btnCamera" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
-	<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/imageView" android:layout_alignTop="@+id/btnCamera"
-			android:layout_toLeftOf="@+id/titleSlider"/>
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/titleSlider"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <RadioButton
+            android:id="@+id/rbLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="85"
+            android:checked="false"
+            android:text="@string/rapport_lowSeekbar" />
+
+        <RadioButton
+            android:id="@+id/rbEmergency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/rapport_emergencySeekbar" />
+    </RadioGroup>
+
 </RelativeLayout>
