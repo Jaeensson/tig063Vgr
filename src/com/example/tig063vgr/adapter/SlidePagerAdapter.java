@@ -4,12 +4,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.tig063vgr.Equipment;
 import com.example.tig063vgr.fragments.FragmentConfirm;
 import com.example.tig063vgr.fragments.FragmentFel;
 import com.example.tig063vgr.fragments.FragmentMaskin;
 
 public class SlidePagerAdapter extends FragmentPagerAdapter {
 
+    private Equipment equipment;
+    public void setEquipment(Equipment e) {
+        equipment = e;
+    }
 	public SlidePagerAdapter(FragmentManager fm) {
 		super(fm);
 	}
@@ -22,7 +27,7 @@ public class SlidePagerAdapter extends FragmentPagerAdapter {
 		// med position och gör en switch baserat på position
 		switch (position) {
 		case 0:
-			return new FragmentMaskin();
+			return new FragmentMaskin(equipment);
 		case 1:
 			return new FragmentFel();
 		case 2:

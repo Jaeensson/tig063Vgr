@@ -9,7 +9,11 @@ import com.example.tig063vgr.fragments.FragmentFel;
 import com.example.tig063vgr.fragments.FragmentMaskin;
 
 public class SlidePagerAdapter extends FragmentPagerAdapter {
-	Fragment fragment = null;
+    public Equipment equipment;
+
+    public void setEquipment(Equipment e) {
+        equipment = e;
+    }
 
 	public SlidePagerAdapter(FragmentManager fm) {
 		super(fm);
@@ -23,13 +27,13 @@ public class SlidePagerAdapter extends FragmentPagerAdapter {
 		// med position och gör en switch baserat på position
 		switch (position) {
 		case 0:
-			return new FragmentMaskin();
+			return new FragmentMaskin(equipment);
 		case 1:
 			return new FragmentFel();
 		case 2:
 			return new FragmentConfirm();
 		}
-		return fragment;
+		return null;
 	}
 
 	@Override

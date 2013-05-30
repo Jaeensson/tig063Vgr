@@ -8,6 +8,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import com.example.tig063vgr.httprules.Modality;
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends UiInit {
 
@@ -27,7 +33,23 @@ public class MainActivity extends UiInit {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
-		mViewPager.setAdapter(mSectionsPagerAdapter);
+        Modality modality = new Modality(this);
+
+        Equipment e = null;
+        try {
+            Random r= new Random();
+            JSONArray result = modality.GetEquipments().get();
+            e = new Equipment(result.getJSONObject(r.nextInt(result.length())));
+            mSectionsPagerAdapter.setEquipment(e);
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
+        } catch (ExecutionException e1) {
+            e1.printStackTrace();
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
 	}
 

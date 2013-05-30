@@ -1,0 +1,556 @@
+2013-05-30 13:55:50,332 [ 508224]   INFO - j.compiler.server.BuildManager - BUILDER_PROCESS [stdout]: Build process started. Classpath: /opt/android-studio/lib/oromatcher.jar:/opt/android-studio/lib/jna.jar:/opt/android-studio/lib/nanoxml-2.2.3.jar:/opt/android-studio/lib/protobuf-2.4.1.jar:/opt/android-studio/lib/jna-utils.jar:/opt/android-studio/lib/netty-3.6.3.Final.jar:/opt/android-studio/lib/util.jar:/opt/android-studio/lib/jgoodies-forms.jar:/opt/android-studio/lib/picocontainer.jar:/opt/android-studio/lib/ecj-4.2.1.jar:/opt/android-studio/lib/idea.jar:/opt/android-studio/lib/idea_rt.jar:/opt/android-studio/lib/log4j.jar:/opt/android-studio/lib/resources_en.jar:/opt/android-studio/lib/asm4-all.jar:/opt/android-studio/lib/annotations.jar:/opt/android-studio/lib/trove4j.jar:/opt/android-studio/lib/javac2.jar:/opt/android-studio/lib/optimizedFileManager.jar:/opt/android-studio/lib/jps-server.jar:/opt/android-studio/lib/jdom.jar:/opt/android-studio/lib/openapi.jar:/opt/android-studio/sdk/lib/tools.jar:/opt/android-studio/plugins/gradle/lib/gradle-messaging-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-wrapper-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle.jar:/opt/android-studio/plugins/gradle/lib/slf4j-api-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/slf4j-simple-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-base-services-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-core-1.6.jar:/opt/android-studio/plugins/gradle/lib/resources_en.jar:/opt/android-studio/plugins/gradle/lib/guava-11.0.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-tooling-api-1.6.jar:/opt/android-studio/plugins/gradle/lib/jsr305-1.3.9.jar:/opt/android-studio/plugins/IntelliLang/lib/intellilang-jps-plugin.jar:/opt/android-studio/plugins/Groovy/lib/groovy-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven3/plexus-utils-2.0.6.jar:/opt/android-studio/plugins/android/lib/jps/android-jps-plugin.jar:/opt/android-studio/plugins/android/lib/jps/android-gradle-jps.jar:/opt/android-studio/plugins/android/lib/android-common.jar:/opt/android-studio/plugins/android/lib/android-rt.jar:/opt/android-studio/plugins/android/lib/sdklib.jar:/opt/android-studio/plugins/android/lib/guava-13.0.1.jar:/opt/android-studio/plugins/android/lib/common.jar:/opt/android-studio/plugins/android/lib/jarutils.jar:/opt/android-studio/plugins/android/lib/layoutlib-api.jar 
+2013-05-30 13:56:06,560 [ 524452]   INFO - lij.compiler.impl.CompilerUtil - 	COMPILATION FINISHED (BUILD PROCESS); Errors: 0; warnings: 0 took 17059 ms: 0 min 17sec 
+2013-05-30 13:56:07,353 [ 525245]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:07,388 [ 525280]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:07,437 [ 525329]   INFO - s.impl.stores.FileBasedStorage - Document was not loaded for $APP_CONFIG$/consoleFolding.xml file is null 
+2013-05-30 13:56:10,557 [ 528449]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 6,4,Idea Thread Group] 2100524977
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - Last Action: Run 
+2013-05-30 13:56:10,560 [ 528452]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 6,4,Idea Thread Group] 2100524977
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:56:10,561 [ 528453]  ERROR - plication.impl.ApplicationImpl - Last Action: Run 
+2013-05-30 13:56:25,527 [ 543419]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:25,539 [ 543431]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:29,703 [ 547595]   INFO - ij.compiler.impl.CompileDriver - COMPILATION STARTED (BUILD PROCESS) 
+2013-05-30 13:56:30,220 [ 548112]   INFO - j.compiler.server.BuildManager - BUILDER_PROCESS [stdout]: Build process started. Classpath: /opt/android-studio/lib/oromatcher.jar:/opt/android-studio/lib/jna.jar:/opt/android-studio/lib/nanoxml-2.2.3.jar:/opt/android-studio/lib/protobuf-2.4.1.jar:/opt/android-studio/lib/jna-utils.jar:/opt/android-studio/lib/netty-3.6.3.Final.jar:/opt/android-studio/lib/util.jar:/opt/android-studio/lib/jgoodies-forms.jar:/opt/android-studio/lib/picocontainer.jar:/opt/android-studio/lib/ecj-4.2.1.jar:/opt/android-studio/lib/idea.jar:/opt/android-studio/lib/idea_rt.jar:/opt/android-studio/lib/log4j.jar:/opt/android-studio/lib/resources_en.jar:/opt/android-studio/lib/asm4-all.jar:/opt/android-studio/lib/annotations.jar:/opt/android-studio/lib/trove4j.jar:/opt/android-studio/lib/javac2.jar:/opt/android-studio/lib/optimizedFileManager.jar:/opt/android-studio/lib/jps-server.jar:/opt/android-studio/lib/jdom.jar:/opt/android-studio/lib/openapi.jar:/opt/android-studio/sdk/lib/tools.jar:/opt/android-studio/plugins/gradle/lib/gradle-messaging-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-wrapper-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle.jar:/opt/android-studio/plugins/gradle/lib/slf4j-api-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/slf4j-simple-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-base-services-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-core-1.6.jar:/opt/android-studio/plugins/gradle/lib/resources_en.jar:/opt/android-studio/plugins/gradle/lib/guava-11.0.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-tooling-api-1.6.jar:/opt/android-studio/plugins/gradle/lib/jsr305-1.3.9.jar:/opt/android-studio/plugins/IntelliLang/lib/intellilang-jps-plugin.jar:/opt/android-studio/plugins/Groovy/lib/groovy-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven3/plexus-utils-2.0.6.jar:/opt/android-studio/plugins/android/lib/jps/android-jps-plugin.jar:/opt/android-studio/plugins/android/lib/jps/android-gradle-jps.jar:/opt/android-studio/plugins/android/lib/android-common.jar:/opt/android-studio/plugins/android/lib/android-rt.jar:/opt/android-studio/plugins/android/lib/sdklib.jar:/opt/android-studio/plugins/android/lib/guava-13.0.1.jar:/opt/android-studio/plugins/android/lib/common.jar:/opt/android-studio/plugins/android/lib/jarutils.jar:/opt/android-studio/plugins/android/lib/layoutlib-api.jar 
+2013-05-30 13:56:32,522 [ 550414]   INFO - lij.compiler.impl.CompilerUtil - 	COMPILATION FINISHED (BUILD PROCESS); Errors: 0; warnings: 0 took 2824 ms: 0 min 2sec 
+2013-05-30 13:56:36,072 [ 553964]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 12,4,Idea Thread Group] 66620456
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:56:36,074 [ 553966]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:56:36,074 [ 553966]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:56:36,074 [ 553966]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:56:36,074 [ 553966]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:56:36,075 [ 553967]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:56:36,075 [ 553967]  ERROR - plication.impl.ApplicationImpl - Last Action: Run 
+2013-05-30 13:56:36,075 [ 553967]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 12,4,Idea Thread Group] 66620456
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:56:36,076 [ 553968]  ERROR - plication.impl.ApplicationImpl - Last Action: Run 
+2013-05-30 13:56:55,133 [ 573025]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:55,147 [ 573039]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:56:55,885 [ 573777]   INFO - openapi.editor.impl.EditorImpl - Cache hits:256, total requests:666,file:///home/rasmus/git/tig063Vgr/src/com/example/tig063vgr/fragments/FragmentMaskin.java 
+2013-05-30 13:57:30,158 [ 608050]   INFO - ij.compiler.impl.CompileDriver - COMPILATION STARTED (BUILD PROCESS) 
+2013-05-30 13:57:30,703 [ 608595]   INFO - j.compiler.server.BuildManager - BUILDER_PROCESS [stdout]: Build process started. Classpath: /opt/android-studio/lib/oromatcher.jar:/opt/android-studio/lib/jna.jar:/opt/android-studio/lib/nanoxml-2.2.3.jar:/opt/android-studio/lib/protobuf-2.4.1.jar:/opt/android-studio/lib/jna-utils.jar:/opt/android-studio/lib/netty-3.6.3.Final.jar:/opt/android-studio/lib/util.jar:/opt/android-studio/lib/jgoodies-forms.jar:/opt/android-studio/lib/picocontainer.jar:/opt/android-studio/lib/ecj-4.2.1.jar:/opt/android-studio/lib/idea.jar:/opt/android-studio/lib/idea_rt.jar:/opt/android-studio/lib/log4j.jar:/opt/android-studio/lib/resources_en.jar:/opt/android-studio/lib/asm4-all.jar:/opt/android-studio/lib/annotations.jar:/opt/android-studio/lib/trove4j.jar:/opt/android-studio/lib/javac2.jar:/opt/android-studio/lib/optimizedFileManager.jar:/opt/android-studio/lib/jps-server.jar:/opt/android-studio/lib/jdom.jar:/opt/android-studio/lib/openapi.jar:/opt/android-studio/sdk/lib/tools.jar:/opt/android-studio/plugins/gradle/lib/gradle-messaging-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-wrapper-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle.jar:/opt/android-studio/plugins/gradle/lib/slf4j-api-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/slf4j-simple-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-base-services-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-core-1.6.jar:/opt/android-studio/plugins/gradle/lib/resources_en.jar:/opt/android-studio/plugins/gradle/lib/guava-11.0.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-tooling-api-1.6.jar:/opt/android-studio/plugins/gradle/lib/jsr305-1.3.9.jar:/opt/android-studio/plugins/IntelliLang/lib/intellilang-jps-plugin.jar:/opt/android-studio/plugins/Groovy/lib/groovy-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven3/plexus-utils-2.0.6.jar:/opt/android-studio/plugins/android/lib/jps/android-jps-plugin.jar:/opt/android-studio/plugins/android/lib/jps/android-gradle-jps.jar:/opt/android-studio/plugins/android/lib/android-common.jar:/opt/android-studio/plugins/android/lib/android-rt.jar:/opt/android-studio/plugins/android/lib/sdklib.jar:/opt/android-studio/plugins/android/lib/guava-13.0.1.jar:/opt/android-studio/plugins/android/lib/common.jar:/opt/android-studio/plugins/android/lib/jarutils.jar:/opt/android-studio/plugins/android/lib/layoutlib-api.jar 
+2013-05-30 13:57:32,810 [ 610702]   INFO - lij.compiler.impl.CompilerUtil - 	COMPILATION FINISHED (BUILD PROCESS); Errors: 0; warnings: 0 took 2655 ms: 0 min 2sec 
+2013-05-30 13:57:32,811 [ 610703]   INFO - ij.compiler.impl.CompileDriver - COMPILATION STARTED (BUILD PROCESS) 
+2013-05-30 13:57:33,683 [ 611575]   INFO - j.compiler.server.BuildManager - BUILDER_PROCESS [stdout]: Build process started. Classpath: /opt/android-studio/lib/oromatcher.jar:/opt/android-studio/lib/jna.jar:/opt/android-studio/lib/nanoxml-2.2.3.jar:/opt/android-studio/lib/protobuf-2.4.1.jar:/opt/android-studio/lib/jna-utils.jar:/opt/android-studio/lib/netty-3.6.3.Final.jar:/opt/android-studio/lib/util.jar:/opt/android-studio/lib/jgoodies-forms.jar:/opt/android-studio/lib/picocontainer.jar:/opt/android-studio/lib/ecj-4.2.1.jar:/opt/android-studio/lib/idea.jar:/opt/android-studio/lib/idea_rt.jar:/opt/android-studio/lib/log4j.jar:/opt/android-studio/lib/resources_en.jar:/opt/android-studio/lib/asm4-all.jar:/opt/android-studio/lib/annotations.jar:/opt/android-studio/lib/trove4j.jar:/opt/android-studio/lib/javac2.jar:/opt/android-studio/lib/optimizedFileManager.jar:/opt/android-studio/lib/jps-server.jar:/opt/android-studio/lib/jdom.jar:/opt/android-studio/lib/openapi.jar:/opt/android-studio/sdk/lib/tools.jar:/opt/android-studio/plugins/gradle/lib/gradle-messaging-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-wrapper-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle.jar:/opt/android-studio/plugins/gradle/lib/slf4j-api-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/slf4j-simple-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-base-services-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-core-1.6.jar:/opt/android-studio/plugins/gradle/lib/resources_en.jar:/opt/android-studio/plugins/gradle/lib/guava-11.0.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-tooling-api-1.6.jar:/opt/android-studio/plugins/gradle/lib/jsr305-1.3.9.jar:/opt/android-studio/plugins/IntelliLang/lib/intellilang-jps-plugin.jar:/opt/android-studio/plugins/Groovy/lib/groovy-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven3/plexus-utils-2.0.6.jar:/opt/android-studio/plugins/android/lib/jps/android-jps-plugin.jar:/opt/android-studio/plugins/android/lib/jps/android-gradle-jps.jar:/opt/android-studio/plugins/android/lib/android-common.jar:/opt/android-studio/plugins/android/lib/android-rt.jar:/opt/android-studio/plugins/android/lib/sdklib.jar:/opt/android-studio/plugins/android/lib/guava-13.0.1.jar:/opt/android-studio/plugins/android/lib/common.jar:/opt/android-studio/plugins/android/lib/jarutils.jar:/opt/android-studio/plugins/android/lib/layoutlib-api.jar 
+2013-05-30 13:57:35,930 [ 613822]   INFO - lij.compiler.impl.CompilerUtil - 	COMPILATION FINISHED (BUILD PROCESS); Errors: 0; warnings: 0 took 5317 ms: 0 min 5sec 
+2013-05-30 13:57:40,277 [ 618169]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 18,4,Idea Thread Group] 10563602
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:40,278 [ 618170]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 18,4,Idea Thread Group] 10563602
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:40,279 [ 618171]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:45,664 [ 623556]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 19,4,Idea Thread Group] 934059667
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:57:45,665 [ 623557]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:45,665 [ 623557]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:45,665 [ 623557]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 19,4,Idea Thread Group] 934059667
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidRunningState$1.run(AndroidRunningState.java:231)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:45,666 [ 623558]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:46,354 [ 624246]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[Monitor,6,Idea Thread Group] 1363184330
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.isReadyForDebugging(AndroidRunConfiguration.java:282)
+	at org.jetbrains.android.run.AndroidRunningState.isToLaunchDebug(AndroidRunningState.java:687)
+	at org.jetbrains.android.run.AndroidRunningState.clientChanged(AndroidRunningState.java:672)
+	at com.android.ddmlib.AndroidDebugBridge.clientChanged(AndroidDebugBridge.java:912)
+	at com.android.ddmlib.Device.update(Device.java:591)
+	at com.android.ddmlib.Client.update(Client.java:868)
+	at com.android.ddmlib.HandleAppName.handleAPNM(HandleAppName.java:112)
+	at com.android.ddmlib.HandleAppName.handleChunk(HandleAppName.java:65)
+	at com.android.ddmlib.MonitorThread.callHandler(MonitorThread.java:414)
+	at com.android.ddmlib.MonitorThread.processClientActivity(MonitorThread.java:322)
+	at com.android.ddmlib.MonitorThread.run(MonitorThread.java:263)
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:46,356 [ 624248]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:46,357 [ 624249]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[Monitor,6,Idea Thread Group] 1363184330
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.isReadyForDebugging(AndroidRunConfiguration.java:282)
+	at org.jetbrains.android.run.AndroidRunningState.isToLaunchDebug(AndroidRunningState.java:687)
+	at org.jetbrains.android.run.AndroidRunningState.clientChanged(AndroidRunningState.java:672)
+	at com.android.ddmlib.AndroidDebugBridge.clientChanged(AndroidDebugBridge.java:912)
+	at com.android.ddmlib.Device.update(Device.java:591)
+	at com.android.ddmlib.Client.update(Client.java:868)
+	at com.android.ddmlib.HandleAppName.handleAPNM(HandleAppName.java:112)
+	at com.android.ddmlib.HandleAppName.handleChunk(HandleAppName.java:65)
+	at com.android.ddmlib.MonitorThread.callHandler(MonitorThread.java:414)
+	at com.android.ddmlib.MonitorThread.processClientActivity(MonitorThread.java:322)
+	at com.android.ddmlib.MonitorThread.run(MonitorThread.java:263)
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:57:46,358 [ 624250]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:57:51,596 [ 629488]   INFO - s.impl.stores.FileBasedStorage - Document was not loaded for $APP_CONFIG$/debugger.threadsview.xml file is null 
+2013-05-30 13:57:52,195 [ 630087]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:57:52,204 [ 630096]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:58:33,364 [ 671256]   INFO - ij.compiler.impl.CompileDriver - COMPILATION STARTED (BUILD PROCESS) 
+2013-05-30 13:58:33,889 [ 671781]   INFO - j.compiler.server.BuildManager - BUILDER_PROCESS [stdout]: Build process started. Classpath: /opt/android-studio/lib/oromatcher.jar:/opt/android-studio/lib/jna.jar:/opt/android-studio/lib/nanoxml-2.2.3.jar:/opt/android-studio/lib/protobuf-2.4.1.jar:/opt/android-studio/lib/jna-utils.jar:/opt/android-studio/lib/netty-3.6.3.Final.jar:/opt/android-studio/lib/util.jar:/opt/android-studio/lib/jgoodies-forms.jar:/opt/android-studio/lib/picocontainer.jar:/opt/android-studio/lib/ecj-4.2.1.jar:/opt/android-studio/lib/idea.jar:/opt/android-studio/lib/idea_rt.jar:/opt/android-studio/lib/log4j.jar:/opt/android-studio/lib/resources_en.jar:/opt/android-studio/lib/asm4-all.jar:/opt/android-studio/lib/annotations.jar:/opt/android-studio/lib/trove4j.jar:/opt/android-studio/lib/javac2.jar:/opt/android-studio/lib/optimizedFileManager.jar:/opt/android-studio/lib/jps-server.jar:/opt/android-studio/lib/jdom.jar:/opt/android-studio/lib/openapi.jar:/opt/android-studio/sdk/lib/tools.jar:/opt/android-studio/plugins/gradle/lib/gradle-messaging-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-wrapper-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle.jar:/opt/android-studio/plugins/gradle/lib/slf4j-api-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/slf4j-simple-1.7.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-base-services-1.6.jar:/opt/android-studio/plugins/gradle/lib/gradle-core-1.6.jar:/opt/android-studio/plugins/gradle/lib/resources_en.jar:/opt/android-studio/plugins/gradle/lib/guava-11.0.2.jar:/opt/android-studio/plugins/gradle/lib/gradle-tooling-api-1.6.jar:/opt/android-studio/plugins/gradle/lib/jsr305-1.3.9.jar:/opt/android-studio/plugins/IntelliLang/lib/intellilang-jps-plugin.jar:/opt/android-studio/plugins/Groovy/lib/groovy-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven-jps-plugin.jar:/opt/android-studio/plugins/maven/lib/maven3/plexus-utils-2.0.6.jar:/opt/android-studio/plugins/android/lib/jps/android-jps-plugin.jar:/opt/android-studio/plugins/android/lib/jps/android-gradle-jps.jar:/opt/android-studio/plugins/android/lib/android-common.jar:/opt/android-studio/plugins/android/lib/android-rt.jar:/opt/android-studio/plugins/android/lib/sdklib.jar:/opt/android-studio/plugins/android/lib/guava-13.0.1.jar:/opt/android-studio/plugins/android/lib/common.jar:/opt/android-studio/plugins/android/lib/jarutils.jar:/opt/android-studio/plugins/android/lib/layoutlib-api.jar 
+2013-05-30 13:58:34,687 [ 672579]   INFO - openapi.editor.impl.EditorImpl - Cache hits:512, total requests:1053,file:///home/rasmus/git/tig063Vgr/src/com/example/tig063vgr/fragments/FragmentMaskin.java 
+2013-05-30 13:58:50,269 [ 688161]   INFO - lij.compiler.impl.CompilerUtil - 	COMPILATION FINISHED (BUILD PROCESS); Errors: 0; warnings: 0 took 16895 ms: 0 min 16sec 
+2013-05-30 13:58:50,667 [ 688559]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 13:59:01,565 [ 699457]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 14,4,Idea Thread Group] 917732270
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.file.impl.FileManagerImpl.findFile(FileManagerImpl.java:321)
+	at com.intellij.psi.impl.PsiManagerImpl.findFile(PsiManagerImpl.java:182)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:37)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidDebugRunner$4.run(AndroidDebugRunner.java:275)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:59:01,566 [ 699458]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:59:01,566 [ 699458]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:59:01,566 [ 699458]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:59:01,567 [ 699459]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:59:01,567 [ 699459]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:59:01,567 [ 699459]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:59:01,567 [ 699459]  ERROR - plication.impl.ApplicationImpl - Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())
+Details: Current thread: Thread[ApplicationImpl pooled thread 14,4,Idea Thread Group] 917732270
+Our dispatch thread:Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610
+SystemEventQueueThread: Thread[AWT-EventQueue-1 0.1.1#AI-130.687321, eap:true,6,Idea Thread Group] 2046936610 
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:61)
+	at com.intellij.openapi.application.impl.ApplicationImpl.assertReadAccessAllowed(ApplicationImpl.java:1071)
+	at com.intellij.psi.impl.source.PsiFileImpl.getStubTree(PsiFileImpl.java:645)
+	at com.intellij.psi.stubs.StubProcessingHelperBase.processStubsInFile(StubProcessingHelperBase.java:43)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:249)
+	at com.intellij.psi.stubs.StubIndexImpl$3.perform(StubIndexImpl.java:241)
+	at com.intellij.util.indexing.ValueContainer.forEach(ValueContainer.java:60)
+	at com.intellij.psi.stubs.StubIndexImpl.process(StubIndexImpl.java:241)
+	at com.intellij.psi.stubs.StubIndexImpl.get(StubIndexImpl.java:214)
+	at com.intellij.psi.stubs.StubIndex.safeGet(StubIndex.java:65)
+	at com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(JavaFullClassNameIndex.java:48)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClassInIndex(JavaFileManagerBase.java:276)
+	at com.intellij.psi.impl.file.impl.JavaFileManagerBase.findClass(JavaFileManagerBase.java:186)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl$PsiElementFinderImpl.findClass(JavaPsiFacadeImpl.java:281)
+	at com.intellij.psi.impl.JavaPsiFacadeImpl.findClass(JavaPsiFacadeImpl.java:109)
+	at org.jetbrains.android.run.AndroidRunConfiguration.getActivityToLaunch(AndroidRunConfiguration.java:215)
+	at org.jetbrains.android.run.AndroidRunConfiguration.access$100(AndroidRunConfiguration.java:67)
+	at org.jetbrains.android.run.AndroidRunConfiguration$2.getActivityName(AndroidRunConfiguration.java:188)
+	at org.jetbrains.android.run.AndroidRunConfiguration$MyApplicationLauncher.launch(AndroidRunConfiguration.java:309)
+	at org.jetbrains.android.run.AndroidRunningState.doPrepareAndStart(AndroidRunningState.java:794)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartApp(AndroidRunningState.java:767)
+	at org.jetbrains.android.run.AndroidRunningState.prepareAndStartAppWhenDeviceIsOnline(AndroidRunningState.java:734)
+	at org.jetbrains.android.run.AndroidRunningState.doStart(AndroidRunningState.java:591)
+	at org.jetbrains.android.run.AndroidRunningState.start(AndroidRunningState.java:567)
+	at org.jetbrains.android.run.AndroidDebugRunner$4.run(AndroidDebugRunner.java:275)
+	at com.intellij.openapi.application.impl.ApplicationImpl$8.run(ApplicationImpl.java:458)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+	at com.intellij.openapi.application.impl.ApplicationImpl$1$1.run(ApplicationImpl.java:154)
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - Android Studio (I/O Preview) AI-130.687321  Build #AI-130.687321 
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - JDK: 1.7.0_21 
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - VM: Java HotSpot(TM) 64-Bit Server VM 
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - Vendor: Oracle Corporation 
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - OS: Linux 
+2013-05-30 13:59:01,568 [ 699460]  ERROR - plication.impl.ApplicationImpl - Last Action: Debug 
+2013-05-30 13:59:03,798 [ 701690]   INFO - openapi.editor.impl.EditorImpl - Cache hits:256, total requests:418,file:///home/rasmus/git/tig063Vgr/src/com/example/tig063vgr/Equipment.java 
+2013-05-30 14:00:05,600 [ 763492]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
+2013-05-30 14:00:05,600 [ 763492]   INFO - ment.AndroidPsiAugmentProvider - R_CLASS_AUGMENT: 12 classes added 
