@@ -22,9 +22,6 @@ public class SlidePagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public Fragment getItem(int position) {
 
-		// TODO: Sortera ange vilken xml som skall inflates i En fragmentklass.
-		// Skicka
-		// med position och gör en switch baserat på position
 		switch (position) {
 		case 0:
 			return new FragmentMaskin(equipment);

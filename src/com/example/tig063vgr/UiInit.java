@@ -32,7 +32,7 @@ public class UiInit extends FragmentActivity {
 					public void onItemClick(AdapterView<?> adapterView,
 							View view, int i, long l) {
 
-						MenuListItem item = (MenuListItem) mainListView
+						MenuListItemCusomClass item = (MenuListItemCusomClass) mainListView
 								.getItemAtPosition(i);
 						String number = "tel:" + item.getPhone();
 						Intent callIntent = new Intent(Intent.ACTION_CALL, Uri
@@ -88,12 +88,12 @@ public class UiInit extends FragmentActivity {
 	public void populateListMenu() {
 
 		mainListView = (ListView) findViewById(R.id.menuList);
-		ArrayList<MenuListItem> list = new ArrayList<MenuListItem>();
-		list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon,
+		ArrayList<MenuListItemCusomClass> list = new ArrayList<MenuListItemCusomClass>();
+		list.add(new MenuListItemCusomClass("Rasmus", R.drawable.telephone_icon,
 				"0767772025"));
-		list.add(new MenuListItem("Adam", R.drawable.telephone_icon,
+		list.add(new MenuListItemCusomClass("Adam", R.drawable.telephone_icon,
 				"0737747780"));
-		list.add(new MenuListItem("Anna", R.drawable.telephone_icon,
+		list.add(new MenuListItemCusomClass("Anna", R.drawable.telephone_icon,
 				"0735864505"));
 		MenuListAdapter a = new MenuListAdapter(this, list);
 		View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
