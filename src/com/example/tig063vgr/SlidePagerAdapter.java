@@ -1,12 +1,12 @@
 package com.example.tig063vgr;
 
-import com.example.tig063vgr.fragments.FragmentConfirm;
-import com.example.tig063vgr.fragments.FragmentFel;
-import com.example.tig063vgr.fragments.FragmentMaskin;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.tig063vgr.fragments.FragmentConfirm;
+import com.example.tig063vgr.fragments.FragmentFel;
+import com.example.tig063vgr.fragments.FragmentMaskin;
 
 public class SlidePagerAdapter extends FragmentPagerAdapter {
 	Fragment fragment = null;
@@ -21,16 +21,15 @@ public class SlidePagerAdapter extends FragmentPagerAdapter {
 		// TODO: Sortera ange vilken xml som skall inflates i En fragmentklass.
 		// Skicka
 		// med position och gör en switch baserat på position
-//		switch (position) {
-//		case 0:
-//			fragment = new FragmentMaskin();
-//		case 1:
-//			fragment = new FragmentConfirm();
-//		case 2:
-//			fragment = new FragmentFel();
-//		}
+		switch (position) {
+		case 0:
+			return new FragmentMaskin();
+		case 1:
+			return new FragmentFel();
+		case 2:
+			return new FragmentConfirm();
+		}
 		return fragment;
-
 	}
 
 	@Override
