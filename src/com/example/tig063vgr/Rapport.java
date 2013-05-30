@@ -15,7 +15,6 @@ import android.widget.ListView;
 
 public class Rapport extends UiInit {
 
-	private static final int PICTURE_RESULT = 1337;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,27 +66,8 @@ public class Rapport extends UiInit {
 		rapportList.setAdapter(adapter);
 	}
 
-	public void btnCameraClick(View v) {
-		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		this.startActivityForResult(camera, PICTURE_RESULT);
-	}
+	
 
-	@Override
-	protected void onActivityResult(int requestCode, int result, Intent intent) {
-		super.onActivityResult(requestCode, result, intent);
-		if (requestCode == PICTURE_RESULT) {
-			if (result == Activity.RESULT_OK) {
-				Bundle b = intent.getExtras();
-				Bitmap bmp = (Bitmap) b.get("data");
-				if (bmp != null) {
-					// ImageView imageView = (ImageView)
-					// findViewById(R.id.imageView);
-					// imageView.setImageBitmap(bmp);
-					// imageView.invalidate();
-				}
-			}
-		}
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
