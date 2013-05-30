@@ -59,17 +59,6 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 			while ((line = reader.readLine()) != null) {
 				content += line;
 			}
-
-			/*
-			 * DefaultHttpClient httpClient = new DefaultHttpClient(); HttpPost
-			 * httpPost = new HttpPost(
-			 * "http://leia.skip.chalmers.se/jaeensson/JSON-API/" + en +
-			 * ".php?action=" + params[0]);
-			 * 
-			 * HttpResponse httpResponse = httpClient.execute(httpPost);
-			 * HttpEntity httpEntity = httpResponse.getEntity(); is =
-			 * httpEntity.getContent();
-			 */
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (ClientProtocolException e) {

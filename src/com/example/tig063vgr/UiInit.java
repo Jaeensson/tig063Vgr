@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.tig063vgr.adapter.MenuListAdapter;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class UiInit extends FragmentActivity {
@@ -81,7 +82,7 @@ public class UiInit extends FragmentActivity {
 		menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
 		menu.setFadeDegree(0.35f);
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-		menu.setMenu(R.layout.menu);
+		menu.setMenu(R.layout.sliding_menu);
 	}
 
 	public void populateListMenu() {

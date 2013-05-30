@@ -1,11 +1,13 @@
 package com.example.tig063vgr;
 
+import com.example.tig063vgr.adapter.SlidePagerAdapter;
+import com.example.tig063vgr.animations.ZoomOutPageTransformer;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 public class MainActivity extends UiInit {
 
@@ -23,13 +25,10 @@ public class MainActivity extends UiInit {
 		mSectionsPagerAdapter = new SlidePagerAdapter(
 				getSupportFragmentManager());
 		mViewPager = (ViewPager) findViewById(R.id.pager);
+		mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
-	}
-
-	public void buttonEmulate(View v) {
-		Intent logOut = new Intent(this, Rapport.class);
-		startActivity(logOut);
 	}
 
 	@Override

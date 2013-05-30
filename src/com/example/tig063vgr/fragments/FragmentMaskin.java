@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.tig063vgr.ListViewAdapter;
 import com.example.tig063vgr.R;
+import com.example.tig063vgr.adapter.ListViewAdapter;
 
 public class FragmentMaskin extends Fragment {
 
@@ -28,7 +28,7 @@ public class FragmentMaskin extends Fragment {
 		// Init Vy and header
 		ListView rapportList = (ListView) rootView
 				.findViewById(R.id.listRapport);
-		View header = inflater.inflate(R.layout.listheader, null);
+		View header = inflater.inflate(R.layout.rapport_listheader, null);
 		rapportList.addHeaderView(header);
 
 		// Populate hashmap
