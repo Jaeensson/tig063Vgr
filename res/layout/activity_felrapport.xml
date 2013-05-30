@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="TO BE CONTINUED
-        CONFIRM"
+        android:text="TO BE CONTINUED 
+        RAPPORT"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

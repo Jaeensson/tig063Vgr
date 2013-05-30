@@ -19,7 +19,7 @@ public class Rapport extends UiInit {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.activity_rapport);
+		setContentView(R.layout.activity_maskin);
 		super.onCreate(savedInstanceState);
 
 		// Init Vy and header

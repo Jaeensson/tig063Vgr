@@ -18,6 +18,7 @@ public class FragmentConfirm extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.activity_confirm, container,
 				false);
+
 		return rootView;
 	}
 }
