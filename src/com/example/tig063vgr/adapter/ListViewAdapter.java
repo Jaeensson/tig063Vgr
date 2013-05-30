@@ -18,7 +18,7 @@ public class ListViewAdapter extends BaseAdapter {
 
 	private Activity activity;
 	private ArrayList<HashMap<String, String>> data;
-	private static LayoutInflater inflater = null;
+	private static LayoutInflater inflater;
 
 	public ListViewAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         super();

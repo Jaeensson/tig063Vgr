@@ -9,7 +9,6 @@ import com.example.tig063vgr.fragments.FragmentFel;
 import com.example.tig063vgr.fragments.FragmentMaskin;
 
 public class SlidePagerAdapter extends FragmentPagerAdapter {
-	Fragment fragment = null;
 
 	public SlidePagerAdapter(FragmentManager fm) {
 		super(fm);
@@ -29,7 +28,7 @@ public class SlidePagerAdapter extends FragmentPagerAdapter {
 		case 2:
 			return new FragmentConfirm();
 		}
-		return fragment;
+		return null;
 	}
 
 	@Override
