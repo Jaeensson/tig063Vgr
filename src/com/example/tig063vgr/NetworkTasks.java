@@ -78,7 +78,6 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 			Log.e("JSONParser", "Error" + e.toString());
 		}
 
-		// return JSON String
 		return jObj;
 	}
 
