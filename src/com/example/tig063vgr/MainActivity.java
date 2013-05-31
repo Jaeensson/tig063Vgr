@@ -10,7 +10,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.tig063vgr.adapter.SlidePagerAdapter;
 import com.example.tig063vgr.animations.ZoomOutPageTransformer;
@@ -54,12 +57,14 @@ public class MainActivity extends UiInit {
 
 	}
 
+
 	@Override
-	protected void onActivityResult(int requestCode, int result, Intent intent) {
-		super.onActivityResult(requestCode, result, intent);
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
 		if (requestCode == PICTURE_RESULT) {
-			if (result == Activity.RESULT_OK) {
-				Bundle b = intent.getExtras();
+			if (resultCode == Activity.RESULT_OK) {
+				Bundle b = data.getExtras();
 				Bitmap bmp = (Bitmap) b.get("data");
 				if (bmp != null) {
 					// ImageView imageView = (ImageView)
@@ -69,5 +74,12 @@ public class MainActivity extends UiInit {
 				}
 			}
 		}
+		
+		Toast.makeText(this, "resultat", Toast.LENGTH_LONG);
+	}
+
+	public void btnCameraClick(View v) {
+		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		this.startActivityForResult(camera, PICTURE_RESULT);
 	}
 }

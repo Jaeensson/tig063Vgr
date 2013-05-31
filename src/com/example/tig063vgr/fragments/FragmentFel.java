@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Toast;
+
 import com.example.tig063vgr.R;
 
 public class FragmentFel extends Fragment {
@@ -24,17 +24,6 @@ public class FragmentFel extends Fragment {
 				container, false);
 		return rootView;
 
-	}
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(getActivity(), "resultat", Toast.LENGTH_LONG);
-    }
-
-    public void btnCameraClick(View v) {
-		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		this.startActivityForResult(camera, PICTURE_RESULT);
 	}
 
 }

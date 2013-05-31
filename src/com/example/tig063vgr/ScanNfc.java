@@ -23,5 +23,6 @@ public class ScanNfc extends Activity {
 	public void buttonEmulate(View v) {
 		Intent i = new Intent(getApplicationContext(), MainActivity.class);
 		startActivity(i);
+		finish();
 	}
 }
