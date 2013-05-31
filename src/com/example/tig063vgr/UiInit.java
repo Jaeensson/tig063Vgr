@@ -24,8 +24,8 @@ public class UiInit extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		initSliding();
-		populateListMenu();
+		// initSliding();
+		// populateListMenu();
 		mainListView
 				.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 					@Override
@@ -86,21 +86,22 @@ public class UiInit extends FragmentActivity {
 		menu.setMenu(R.layout.sliding_menu);
 	}
 
-	public void populateListMenu() {
-
-		mainListView = (ListView) findViewById(R.id.menuList);
-		ArrayList<MenuListItemCusomClass> list = new ArrayList<MenuListItemCusomClass>();
-		list.add(new MenuListItemCusomClass("Rasmus",
-				R.drawable.telephone_icon, "0767772025"));
-		list.add(new MenuListItemCusomClass("Adam", R.drawable.telephone_icon,
-				"0737747780"));
-		list.add(new MenuListItemCusomClass("Anna", R.drawable.telephone_icon,
-				"0735864505"));
-		MenuListAdapter a = new MenuListAdapter(this, list);
-		View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
-				null);
-		// TODO: Make header NON-clickable
-		mainListView.addHeaderView(header);
-		mainListView.setAdapter(a);
-	}
+	 public void populateListMenu() {
+	
+	 mainListView = (ListView) findViewById(R.id.menuList);
+	 ArrayList<MenuListItemCusomClass> list = new
+	 ArrayList<MenuListItemCusomClass>();
+	 list.add(new MenuListItemCusomClass("Rasmus",
+	 R.drawable.telephone_icon, "0767772025"));
+	 list.add(new MenuListItemCusomClass("Adam", R.drawable.telephone_icon,
+	 "0737747780"));
+	 list.add(new MenuListItemCusomClass("Anna", R.drawable.telephone_icon,
+	 "0735864505"));
+	 MenuListAdapter a = new MenuListAdapter(this, list);
+	 View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
+	 null);
+	 // TODO: Make header NON-clickable
+	 mainListView.addHeaderView(header);
+	 mainListView.setAdapter(a);
+	 }
 }
