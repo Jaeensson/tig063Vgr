@@ -43,7 +43,7 @@
             <ImageButton
                 android:id="@+id/buttonCamera"
                 android:layout_width="30dp"
-                android:layout_height="30d0p"
+                android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:src="@drawable/camera" />
