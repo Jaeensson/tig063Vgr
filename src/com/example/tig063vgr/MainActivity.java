@@ -76,8 +76,7 @@ public class MainActivity extends UiInit {
 				Bitmap bmp = (Bitmap) b.get("data");
 				if (bmp != null) {
 					ImageButton cameraBtn = (ImageButton) findViewById(R.id.buttonCamera);
-					record.stopRecording();
-					cameraBtn.setImageResource(R.drawable.camera_blue);
+					cameraBtn.setImageResource(R.drawable.cameraselected);
 
 				}
 			}
