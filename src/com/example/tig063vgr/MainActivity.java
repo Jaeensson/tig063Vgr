@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -42,7 +41,11 @@ public class MainActivity extends UiInit {
 			Random r = new Random();
 			JSONArray result = null;
 
+			//DEN HÄR
 			result = modality.GetEquipments().get();
+			//DEN HÄR
+			
+			
 			Equipment e = new Equipment(result.getJSONObject(r.nextInt(result
 					.length())));
 			mSectionsPagerAdapter.setEquipment(e);
