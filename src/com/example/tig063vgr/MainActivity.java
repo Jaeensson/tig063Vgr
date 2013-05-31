@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -67,15 +68,16 @@ public class MainActivity extends UiInit {
 				Bundle b = data.getExtras();
 				Bitmap bmp = (Bitmap) b.get("data");
 				if (bmp != null) {
-					ImageView imageView = (ImageView) findViewById(R.id.feedbackImg);
-					imageView.setImageBitmap(bmp);
-					imageView.invalidate();
+					ImageButton cameraBtn = (ImageButton) findViewById(R.id.buttonCamera);
+					// ImageButton micBtn = (ImageButton)
+					// findViewById(R.id.buttonMic);
+
+					cameraBtn.setImageResource(R.drawable.camera_blue);
+
 				}
 			}
 		}
 
-		Toast.makeText(getApplicationContext(), "resultat", Toast.LENGTH_LONG)
-				.show();
 	}
 
 	public void btnCameraClick(View v) {
