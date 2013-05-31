@@ -87,9 +87,6 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 		if (dialog.isShowing()) {
 			dialog.dismiss();
 		}
-		if (result != null) {
-
-		}
 	}
 
 	@Override

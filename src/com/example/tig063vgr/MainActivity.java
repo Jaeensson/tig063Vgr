@@ -36,24 +36,28 @@ public class MainActivity extends UiInit {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
-		Modality modality = new Modality(this);
 
-		Equipment e = null;
-		try {
-			Random r = new Random();
-			JSONArray result = modality.GetEquipments().get();
-			e = new Equipment(result.getJSONObject(r.nextInt(result.length())));
-			mSectionsPagerAdapter.setEquipment(e);
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		} catch (ExecutionException e1) {
-			e1.printStackTrace();
-		} catch (JSONException e1) {
-			e1.printStackTrace();
-		}
+		new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Modality modality = new Modality(getApplicationContext());
+                    Random r = new Random();
+                    JSONArray result = null;
 
-		mViewPager.setAdapter(mSectionsPagerAdapter);
-
+                    result = modality.GetEquipments().get();
+                    Equipment e = new Equipment(result.getJSONObject(r.nextInt(result.length())));
+                    mSectionsPagerAdapter.setEquipment(e);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                } catch (ExecutionException e1) {
+                    e1.printStackTrace();
+                } catch (JSONException e1) {
+                    e1.printStackTrace();
+                }
+                mViewPager.setAdapter(mSectionsPagerAdapter);
+            }
+        };
 	}
 
 	@Override
