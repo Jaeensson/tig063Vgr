@@ -116,10 +116,13 @@
         android:layout_marginTop="15dp"
         android:text="@string/txtPrio"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-	<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/feedbackImg" android:layout_below="@+id/linearLayout"
-			android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/feedbackImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filler"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
