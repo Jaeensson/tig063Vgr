@@ -20,5 +20,8 @@
     <string name="login_headin_vgr">VGR</string>
     <string name="login_header">Inloggning</string>
     <string name="next">Nästa</string>
+	<string name="confirmHeaderText">Felrapport skickad</string>
+	<string name="btnExitText">Avsluta</string>
+	<string name="btnScanText">Skanna ny</string>
 
 </resources>
