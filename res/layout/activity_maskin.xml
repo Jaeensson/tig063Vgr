@@ -9,12 +9,15 @@
     tools:context=".Rapport" >
 
     <LinearLayout
+	    android:clickable="false"
+	    android:longClickable="false"
         android:id="@+id/hej"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <ListView
+	        android:duplicateParentState="true"
             android:id="@+id/listRapport"
             android:layout_width="match_parent"
             android:layout_height="392dp"
