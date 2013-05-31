@@ -25,4 +25,5 @@
 			android:text="@string/btnExitText"
 			android:id="@+id/btnExit"
 			android:layout_alignTop="@+id/button"/>
+
 </LinearLayout>

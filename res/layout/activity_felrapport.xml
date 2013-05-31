@@ -2,19 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <!-- TODO: FIX GREY BUTTON COLOR. MAKE "BUTTON" Transparent. DONT USE IMAGEVIEW.!! -->
+    android:orientation="vertical" android:background="@color/bg_gray">
 
     <Spinner
+	    android:layout_marginRight="15dp"
+	    android:layout_marginLeft="15dp"
         android:id="@+id/spinner2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
-
-    <EditText
+        android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true"/>
+	<Spinner
+		android:layout_marginRight="15dp"
+		android:layout_marginLeft="15dp"
+		android:id="@+id/spinner1"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+	<EditText
         android:id="@+id/editText1"
         android:layout_width="fill_parent"
         android:layout_height="125dp"
@@ -24,76 +28,67 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="26dp"
-        android:ems="10" />
+        android:ems="10" android:background="@color/white"/>
 
-    <LinearLayout
+	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText1"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
+        android:orientation="horizontal"
+        android:weightSum="2" android:id="@+id/linearLayout"
+        android:layout_below="@+id/editText1" android:layout_marginTop="20dp">
             <ImageButton
+		            android:layout_marginLeft="50dp"
+	            android:background="@null"
+	            android:layout_weight="1"
                 android:id="@+id/buttonCamera"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
                 android:src="@drawable/camera" />
-
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="26dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
             <ImageButton
+		            android:layout_marginRight="50dp"
+	            android:background="@null"
                 android:id="@+id/buttonMic"
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:src="@drawable/mic" />
-        </LinearLayout>
     </LinearLayout>
 
-    <RadioButton
-        android:id="@+id/radio2"
-        android:layout_width="wrap_content"
+	<TextView
+		android:id="@+id/filler"
+        style="@style/sectionHeader"
+        android:text=""
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="RadioButton" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="25dp"/>
 
-    <RadioGroup
+	<RadioGroup
         android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="95dp" >
-    </RadioGroup>
-
-    <RadioButton
-        android:id="@+id/radio0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinner2"
-        android:layout_alignTop="@+id/radioGroup1"
-        android:checked="true"
-        android:text="RadioButton" />
+        android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:orientation="horizontal"
+			android:weightSum="2">
+		<RadioButton
+				android:layout_weight="1"
+		    android:id="@+id/radio0"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/spinner2"
+		    android:layout_alignTop="@+id/radioGroup1"
+		    android:checked="true"
+		    android:text="RadioButton" />
+		<RadioButton
+				android:layout_weight="1"
+		    android:id="@+id/radio2"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="RadioButton" />
+	</RadioGroup>
 
 </RelativeLayout>
