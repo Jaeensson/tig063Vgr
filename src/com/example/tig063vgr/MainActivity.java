@@ -1,5 +1,6 @@
 package com.example.tig063vgr;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
@@ -14,8 +15,6 @@ import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.tig063vgr.adapter.SlidePagerAdapter;
 import com.example.tig063vgr.animations.ZoomOutPageTransformer;
@@ -26,6 +25,7 @@ public class MainActivity extends UiInit {
 	SlidePagerAdapter mSectionsPagerAdapter;
 	ViewPager mViewPager;
 	private static final int PICTURE_RESULT = 1337;
+	SoundRecorder record;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,13 @@ public class MainActivity extends UiInit {
 		super.onCreate(savedInstanceState);
 		// TODO: Får följande INFO debug Bitmap too large to be uploaded into a
 		// texture (2362x556, max=2048x2048)
+		record = new SoundRecorder(getApplicationContext());
+		try {
+			record.startRecording();
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 
 		mSectionsPagerAdapter = new SlidePagerAdapter(
 				getSupportFragmentManager());
@@ -69,9 +76,7 @@ public class MainActivity extends UiInit {
 				Bitmap bmp = (Bitmap) b.get("data");
 				if (bmp != null) {
 					ImageButton cameraBtn = (ImageButton) findViewById(R.id.buttonCamera);
-					// ImageButton micBtn = (ImageButton)
-					// findViewById(R.id.buttonMic);
-
+					record.stopRecording();
 					cameraBtn.setImageResource(R.drawable.camera_blue);
 
 				}

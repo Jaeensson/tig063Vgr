@@ -12,24 +12,18 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 
 public class SoundRecorder {
 	MediaRecorder recorder;
 	File audiofile = null;
 	private static final String TAG = "SoundRecordingActivity";
-	private View startButton;
-	private View stopButton;
 	Context context;
 
 	public SoundRecorder(Context ctx) {
 		context = ctx;
 	}
 
-	public void startRecording(View view) throws IOException {
-
-		startButton.setEnabled(false);
-		stopButton.setEnabled(true);
+	public void startRecording() throws IOException {
 
 		File sampleDir = Environment.getExternalStorageDirectory();
 		try {
@@ -47,9 +41,7 @@ public class SoundRecorder {
 		recorder.start();
 	}
 
-	public void stopRecording(View view) {
-		startButton.setEnabled(true);
-		stopButton.setEnabled(false);
+	public void stopRecording() {
 		recorder.stop();
 		recorder.release();
 		addRecordingToMediaLibrary();
