@@ -1,10 +1,13 @@
 package com.example.tig063vgr.splash;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.tig063vgr.LoginActivity;
 import com.example.tig063vgr.R;
+import com.example.tig063vgr.ScanNfc;
 import com.example.tig063vgr.SessionManager;
 
 public class SplashScreenActivity extends Activity {
@@ -26,7 +29,16 @@ public class SplashScreenActivity extends Activity {
 				if (!mIsBackButtonPressed) {
 					SessionManager isLogged = new SessionManager(
 							getApplicationContext());
-					isLogged.checkLogin();
+					if (isLogged.isLoggedIn()) {
+						Intent i = new Intent(getApplicationContext(),
+								LoginActivity.class);
+						startActivity(i);
+					} else {
+						Intent i = new Intent(getApplicationContext(),
+								ScanNfc.class);
+						startActivity(i);
+
+					}
 				}
 
 			}

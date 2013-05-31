@@ -20,8 +20,10 @@
     <string name="login_headin_vgr">VGR</string>
     <string name="login_header">Inloggning</string>
     <string name="next">Nästa</string>
-	<string name="confirmHeaderText">Felrapport skickad</string>
-	<string name="btnExitText">Avsluta</string>
-	<string name="btnScanText">Skanna ny</string>
+    <string name="confirmHeaderText">Felrapport skickad</string>
+    <string name="btnExitText">Avsluta</string>
+    <string name="btnScanText">Skanna ny</string>
+    <string name="scanNfcIns">Håll mobilen ovanför NFC taggen</string>
+    <string name="title_activity_scan_nfc">ScanNfc</string>
 
 </resources>

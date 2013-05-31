@@ -57,6 +57,10 @@
             android:name="com.example.tig063vgr.UiInit"
             android:label="@string/title_activity_ui_init" >
         </activity>
+        <activity
+            android:name="com.example.tig063vgr.ScanNfc"
+            android:label="@string/title_activity_scan_nfc" >
+        </activity>
     </application>
 
 </manifest>
