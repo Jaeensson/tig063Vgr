@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.tig063vgr.adapter.SlidePagerAdapter;
@@ -57,25 +58,24 @@ public class MainActivity extends UiInit {
 
 	}
 
-
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
+
 		if (requestCode == PICTURE_RESULT) {
 			if (resultCode == Activity.RESULT_OK) {
 				Bundle b = data.getExtras();
 				Bitmap bmp = (Bitmap) b.get("data");
 				if (bmp != null) {
-					// ImageView imageView = (ImageView)
-					// findViewById(R.id.imageView);
-					// imageView.setImageBitmap(bmp);
-					// imageView.invalidate();
+					ImageView imageView = (ImageView) findViewById(R.id.feedbackImg);
+					imageView.setImageBitmap(bmp);
+					imageView.invalidate();
 				}
 			}
 		}
-		
-		Toast.makeText(this, "resultat", Toast.LENGTH_LONG);
+
+		Toast.makeText(getApplicationContext(), "resultat", Toast.LENGTH_LONG)
+				.show();
 	}
 
 	public void btnCameraClick(View v) {

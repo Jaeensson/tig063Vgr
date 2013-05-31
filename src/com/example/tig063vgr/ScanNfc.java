@@ -12,6 +12,7 @@ public class ScanNfc extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scan_nfc);
+
 	}
 
 	@Override
@@ -22,7 +23,9 @@ public class ScanNfc extends Activity {
 
 	public void buttonEmulate(View v) {
 		Intent i = new Intent(getApplicationContext(), MainActivity.class);
+
 		startActivity(i);
+		// TODO: start loadingScreen to show downloading data
 		finish();
 	}
 }
