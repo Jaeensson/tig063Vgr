@@ -42,7 +42,7 @@ public class SoundRecorder {
             recorder.prepare();
             recorder.start();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("", e.getMessage());
         }
 	}
 
