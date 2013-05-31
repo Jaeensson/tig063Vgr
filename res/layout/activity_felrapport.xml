@@ -117,9 +117,9 @@
         android:text="@string/txtPrio"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 	<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/imageView" android:layout_below="@+id/linearLayout"
-			android:layout_centerHorizontal="true"/>
+		android:layout_width="30dp"
+		android:layout_height="30dp"
+		android:id="@+id/imageView" android:layout_below="@+id/linearLayout"
+		android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
