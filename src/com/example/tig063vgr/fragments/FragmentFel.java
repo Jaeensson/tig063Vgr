@@ -40,11 +40,7 @@ public class FragmentFel extends Fragment {
 					new Runnable() {
                         @Override
                         public void run() {
-                            try {
-                                record.startRecording();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            record.startRecording();
                         }
                     }.run();
 

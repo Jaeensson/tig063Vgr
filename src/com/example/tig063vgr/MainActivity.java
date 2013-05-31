@@ -32,12 +32,11 @@ public class MainActivity extends UiInit {
 		// TODO: Får följande INFO debug Bitmap too large to be uploaded into a
 		// texture (2362x556, max=2048x2048)
 		record = new SoundRecorder(getApplicationContext());
-		try {
+
 			record.startRecording();
-		} catch (IOException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+
+			// TODO Auto-generated catch
+
 
 		mSectionsPagerAdapter = new SlidePagerAdapter(
 				getSupportFragmentManager());

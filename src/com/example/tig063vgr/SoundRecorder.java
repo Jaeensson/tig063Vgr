@@ -23,11 +23,12 @@ public class SoundRecorder {
 		context = ctx;
 	}
 
-	public void startRecording() throws IOException {
+	public void startRecording() {
 
 		File sampleDir = Environment.getExternalStorageDirectory();
 		try {
 			audiofile = File.createTempFile("sound", ".3gp", sampleDir);
+            Log.d("", audiofile.getAbsolutePath());
 		} catch (IOException e) {
 			Log.e(TAG, "sdcard access error");
 			return;
@@ -37,8 +38,12 @@ public class SoundRecorder {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         recorder.setOutputFile(audiofile.getAbsolutePath());
-        recorder.prepare();
-		recorder.start();
+        try {
+            recorder.prepare();
+            recorder.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 	public void stopRecording() {
