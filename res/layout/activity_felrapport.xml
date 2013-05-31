@@ -2,28 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" android:background="@color/bg_gray">
+    android:orientation="vertical">
 
-    <Spinner
-	    android:layout_marginRight="15dp"
-	    android:layout_marginLeft="15dp"
-        android:id="@+id/spinner2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1"
-        android:layout_centerHorizontal="true"/>
 	<Spinner
 		android:layout_marginRight="15dp"
 		android:layout_marginLeft="15dp"
 		android:id="@+id/spinner1"
+		android:layout_marginTop="20dp"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" />
+	<Spinner
+			android:layout_marginRight="15dp"
+			android:layout_marginLeft="15dp"
+			android:id="@+id/spinner2"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/spinner1"
+			android:layout_marginTop="20dp"
+			android:layout_centerHorizontal="true"/>
 	<EditText
         android:id="@+id/editText1"
         android:layout_width="fill_parent"
-        android:layout_height="125dp"
+        android:layout_height="175dp"
+        android:inputType="textShortMessage|textMultiLine|textCapSentences|textAutoCorrect"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:gravity="top"
         android:layout_below="@+id/spinner2"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -75,20 +79,27 @@
         android:orientation="horizontal"
 			android:weightSum="2">
 		<RadioButton
-				android:layout_weight="1"
+				android:layout_marginLeft="15dp"
+			android:layout_weight="1"
 		    android:id="@+id/radio0"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:layout_alignLeft="@+id/spinner2"
-		    android:layout_alignTop="@+id/radioGroup1"
 		    android:checked="true"
-		    android:text="RadioButton" />
+		    android:text="@string/radioNormal" />
 		<RadioButton
-				android:layout_weight="1"
+			android:layout_weight="1"
 		    android:id="@+id/radio2"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="RadioButton" />
+		    android:text="@string/radioHigh" android:checked="false"
+			android:layout_marginLeft="140dp"/>
 	</RadioGroup>
+	<TextView
 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_marginTop="15dp"
+			android:text="@string/txtPrio"
+			android:id="@+id/textView" android:layout_below="@+id/filler" android:layout_centerHorizontal="true"/>
 </RelativeLayout>

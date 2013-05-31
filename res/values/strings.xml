@@ -25,5 +25,8 @@
     <string name="btnScanText">Skanna ny</string>
     <string name="scanNfcIns">Håll mobilen ovanför NFC taggen</string>
     <string name="title_activity_scan_nfc">ScanNfc</string>
+	<string name="txtPrio">Prioritet</string>
+	<string name="radioHigh">Hög</string>
+	<string name="radioNormal">Normal</string>
 
 </resources>
