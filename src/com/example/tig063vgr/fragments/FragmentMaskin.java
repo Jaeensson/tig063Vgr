@@ -47,12 +47,12 @@ public class FragmentMaskin extends Fragment {
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         HashMap<String, String> item = new HashMap<String, String>();
         item.put("large", "Utrustning ID");
-        item.put("small", equipment.id);
+        item.put("small", equipment.getId());
         list.add(item);
 
         item = new HashMap<String, String>();
         item.put("large", "Namn");
-        item.put("small", equipment.name);
+        item.put("small", equipment.getName());
         list.add(item);
 
         item = new HashMap<String, String>();
@@ -66,7 +66,7 @@ public class FragmentMaskin extends Fragment {
 
         item = new HashMap<String, String>();
         item.put("large", "Plats");
-        item.put("small", equipment.locationId);
+        item.put("small", equipment.getLocationId());
         list.add(item);
 
 
@@ -78,7 +78,7 @@ public class FragmentMaskin extends Fragment {
 
         item = new HashMap<String, String>();
         item.put("large", "Modality Group");
-        item.put("small", equipment.modalityGroupId);
+        item.put("small", equipment.getModalityGroupId());
         list.add(item);
 
         ListViewAdapter adapter = new ListViewAdapter(getActivity(), list);
