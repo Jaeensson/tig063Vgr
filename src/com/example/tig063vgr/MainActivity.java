@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -84,8 +86,23 @@ public class MainActivity extends UiInit {
 
 	}
 
-	public void btnCameraClick(View v) {
-		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		this.startActivityForResult(camera, PICTURE_RESULT);
-	}
+    public void btnCameraClick(View v) {
+        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        this.startActivityForResult(camera, PICTURE_RESULT);
+    }
+    public void btnMicClick(View v) {
+        try {
+            record.startRecording();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ProgressDialog p = ProgressDialog.show(getApplicationContext(),"VGR", "Spelar in",true, true,new DialogInterface.OnCancelListener() {
+
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                record.stopRecording();
+                dialogInterface.dismiss();
+            }
+        });
+    }
 }

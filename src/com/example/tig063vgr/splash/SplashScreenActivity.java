@@ -20,16 +20,14 @@ public class SplashScreenActivity extends Activity {
 		setContentView(R.layout.splash_screen);
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable() {
-
 			@Override
 			public void run() {
-
 				finish();
 
 				if (!mIsBackButtonPressed) {
 					SessionManager isLogged = new SessionManager(
 							getApplicationContext());
-					if (isLogged.isLoggedIn()) {
+					if (!isLogged.isLoggedIn()) {
 						Intent i = new Intent(getApplicationContext(),
 								LoginActivity.class);
 						startActivity(i);
