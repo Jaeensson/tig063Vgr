@@ -84,7 +84,10 @@ public class NetworkTasks extends AsyncTask<String, Void, JSONArray> {
 
 	@Override
 	protected void onPostExecute(final JSONArray result) {
-		if (dialog.isShowing()) {
+
+        MainActivity act = (MainActivity) context;
+        act.setData(result);
+        if (dialog.isShowing()) {
 			dialog.dismiss();
 		}
 	}
