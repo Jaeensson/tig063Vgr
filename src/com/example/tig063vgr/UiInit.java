@@ -58,7 +58,8 @@ public class UiInit extends FragmentActivity {
 		case R.id.action_logout:
 			SessionManager session = new SessionManager(getApplicationContext());
 			session.logoutUser();
-			Intent logOut = new Intent(this, LoginActivity.class);
+			Intent logOut = new Intent(getApplicationContext(),
+					LoginActivity.class);
 			startActivity(logOut);
 			finish();
 			return true;
@@ -89,8 +90,8 @@ public class UiInit extends FragmentActivity {
 
 		mainListView = (ListView) findViewById(R.id.menuList);
 		ArrayList<MenuListItemCusomClass> list = new ArrayList<MenuListItemCusomClass>();
-		list.add(new MenuListItemCusomClass("Rasmus", R.drawable.telephone_icon,
-				"0767772025"));
+		list.add(new MenuListItemCusomClass("Rasmus",
+				R.drawable.telephone_icon, "0767772025"));
 		list.add(new MenuListItemCusomClass("Adam", R.drawable.telephone_icon,
 				"0737747780"));
 		list.add(new MenuListItemCusomClass("Anna", R.drawable.telephone_icon,
@@ -98,7 +99,7 @@ public class UiInit extends FragmentActivity {
 		MenuListAdapter a = new MenuListAdapter(this, list);
 		View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
 				null);
-		//TODO: Make header NON-clickable
+		// TODO: Make header NON-clickable
 		mainListView.addHeaderView(header);
 		mainListView.setAdapter(a);
 	}
