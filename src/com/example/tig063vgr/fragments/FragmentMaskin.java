@@ -52,9 +52,8 @@ public class FragmentMaskin extends Fragment {
 
 		item = new HashMap<String, String>();
 		item.put("large", "Tillverkare");
-		String[] menyItems = { " Simens", "Nokia", "Volvo", "SAAB", "Intel",
-				"AMD", "Nvidia", "LG", "Apple", "Dell", "Microsoft", "Google",
-				"NASA" };
+		String[] menyItems = { "GE Med.", "Scan OD", "Medicine Radio",
+				"Hospital Radiology Medicine" };
 
 		item.put("small", menyItems[r.nextInt(menyItems.length)]);
 		list.add(item);

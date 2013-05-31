@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -36,28 +37,23 @@ public class MainActivity extends UiInit {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
+		try {
+			Modality modality = new Modality(this);
+			Random r = new Random();
+			JSONArray result = null;
 
-		new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Modality modality = new Modality(getApplicationContext());
-                    Random r = new Random();
-                    JSONArray result = null;
-
-                    result = modality.GetEquipments().get();
-                    Equipment e = new Equipment(result.getJSONObject(r.nextInt(result.length())));
-                    mSectionsPagerAdapter.setEquipment(e);
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                } catch (ExecutionException e1) {
-                    e1.printStackTrace();
-                } catch (JSONException e1) {
-                    e1.printStackTrace();
-                }
-                mViewPager.setAdapter(mSectionsPagerAdapter);
-            }
-        };
+			result = modality.GetEquipments().get();
+			Equipment e = new Equipment(result.getJSONObject(r.nextInt(result
+					.length())));
+			mSectionsPagerAdapter.setEquipment(e);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		} catch (ExecutionException e1) {
+			e1.printStackTrace();
+		} catch (JSONException e1) {
+			e1.printStackTrace();
+		}
+		mViewPager.setAdapter(mSectionsPagerAdapter);
 	}
 
 	@Override
