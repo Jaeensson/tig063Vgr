@@ -1,6 +1,5 @@
 package com.example.tig063vgr;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
@@ -31,12 +30,6 @@ public class MainActivity extends UiInit {
 		super.onCreate(savedInstanceState);
 		// TODO: Får följande INFO debug Bitmap too large to be uploaded into a
 		// texture (2362x556, max=2048x2048)
-		record = new SoundRecorder(getApplicationContext());
-
-			record.startRecording();
-
-			// TODO Auto-generated catch
-
 
 		mSectionsPagerAdapter = new SlidePagerAdapter(
 				getSupportFragmentManager());
@@ -74,6 +67,7 @@ public class MainActivity extends UiInit {
 				if (bmp != null) {
 					ImageButton cameraBtn = (ImageButton) findViewById(R.id.buttonCamera);
 					cameraBtn.setImageResource(R.drawable.cameraselected);
+					cameraBtn.setEnabled(false);
 
 				}
 			}

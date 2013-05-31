@@ -37,7 +37,6 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		// TODO: Cursor foceses on password edittext. Change order of the
 		// edittext.
-		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);

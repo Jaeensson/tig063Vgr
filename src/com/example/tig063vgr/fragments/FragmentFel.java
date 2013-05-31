@@ -1,7 +1,5 @@
 package com.example.tig063vgr.fragments;
 
-import java.io.IOException;
-
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
@@ -18,6 +17,7 @@ import com.example.tig063vgr.SoundRecorder;
 
 public class FragmentFel extends Fragment {
 	SoundRecorder record;
+	ImageButton micBtn, cameraBtn;
 
 	public FragmentFel() {
 	}
@@ -28,8 +28,17 @@ public class FragmentFel extends Fragment {
 		View rootView = inflater.inflate(R.layout.activity_felrapport,
 				container, false);
 
-		ImageButton micBtn = (ImageButton) rootView
-				.findViewById(R.id.buttonMic);
+		cameraBtn = (ImageButton) rootView.findViewById(R.id.buttonCamera);
+		micBtn = (ImageButton) rootView.findViewById(R.id.buttonMic);
+
+		cameraBtn.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				getActivity().startActivityForResult(camera, 1337);
+			}
+		});
 
 		micBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -37,30 +46,34 @@ public class FragmentFel extends Fragment {
 
 				record = new SoundRecorder(getActivity()
 						.getApplicationContext());
-					new Runnable() {
-                        @Override
-                        public void run() {
-                            record.startRecording();
-                        }
-                    }.run();
+				new Runnable() {
+					@Override
+					public void run() {
+						record.startRecording();
+					}
+				}.run();
 
 				ProgressDialog p = new ProgressDialog(getActivity());
-                p.setTitle("VGR");
-                p.setMessage("Spelar in");
-                p.setCancelable(true);
-                p.setButton(DialogInterface.BUTTON_NEGATIVE, "Stopp", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        record.stopRecording();
-                        dialogInterface.dismiss();
-                    }
-                });
-                p.show();
+				p.setTitle("VGR");
+				p.setMessage("Spelar in");
+				p.setCancelable(true);
+				p.setButton(DialogInterface.BUTTON_NEGATIVE, "Stopp",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(
+									DialogInterface dialogInterface, int i) {
+								record.stopRecording();
+								micBtn.setImageResource(R.drawable.micselected);
+								micBtn.setEnabled(false);
+								dialogInterface.dismiss();
+							}
+						});
+				p.show();
 			}
 		});
 
 		return rootView;
-
+		
 	}
 
 	public void btnCameraClick(View v) {
