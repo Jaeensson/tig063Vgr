@@ -18,6 +18,15 @@ public class FragmentFel extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.activity_felrapport,
 				container, false);
+		
+//		Spinner spinner2 = (Spinner) rootView.findViewById(R.id.spinner2);
+//		List<String> list = new ArrayList<String>();
+//		list.add("list 3");
+//		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(
+//				getActivity(), android.R.layout.simple_spinner_item, list);
+//		dataAdapter
+//				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		spinner2.setAdapter(dataAdapter);
 		return rootView;
 
 	}

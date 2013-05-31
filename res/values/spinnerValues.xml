@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="problemkategori">
+        <item>Dålig bildkvalitet</item>
+        <item>Lågt heliumvärde</item>
+        <item>Skannar inte</item>
+    </string-array>
+    <string-array name="subproblem">
+        <item>Oskäpra</item>
+        <item>Linjer på bilden</item>
+    </string-array>
+
+</resources>

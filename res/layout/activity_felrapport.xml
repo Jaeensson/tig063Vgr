@@ -10,7 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:entries="@array/problemkategori"
+        android:prompt="@string/action_logout" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -20,7 +22,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:entries="@array/subproblem" />
 
     <EditText
         android:id="@+id/editText1"
@@ -64,7 +67,8 @@
             android:layout_marginRight="50dp"
             android:layout_weight="1"
             android:background="@null"
-            android:onClick="btnMicClick"
+            android:onClick="btnMicClick
+            "
             android:src="@drawable/mic" />
     </LinearLayout>
 
