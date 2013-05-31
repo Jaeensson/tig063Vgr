@@ -32,38 +32,37 @@ public class FragmentFel extends Fragment {
 				.findViewById(R.id.buttonMic);
 
 		micBtn.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 
 				record = new SoundRecorder(getActivity()
 						.getApplicationContext());
+					new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                record.startRecording();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }.run();
 
-				try {
-					record.startRecording();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				ProgressDialog p = ProgressDialog.show(getActivity(), "VGR",
-						"Spelar in", true, true,
-						new DialogInterface.OnCancelListener() {
-
-							@Override
-							public void onCancel(DialogInterface dialogInterface) {
-								record.stopRecording();
-								dialogInterface.dismiss();
-							}
-						});
+				ProgressDialog p = new ProgressDialog(getActivity());
+                p.setTitle("VGR");
+                p.setMessage("Spelar in");
+                p.setCancelable(true);
+                p.setButton(DialogInterface.BUTTON_NEGATIVE, "Stopp", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        record.stopRecording();
+                        dialogInterface.dismiss();
+                    }
+                });
+                p.show();
 			}
 		});
-		// Spinner spinner2 = (Spinner) rootView.findViewById(R.id.spinner2);
-		// List<String> list = new ArrayList<String>();
-		// list.add("list 3");
-		// ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(
-		// getActivity(), android.R.layout.simple_spinner_item, list);
-		// dataAdapter
-		// .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// spinner2.setAdapter(dataAdapter);
+
 		return rootView;
 
 	}
@@ -71,9 +70,5 @@ public class FragmentFel extends Fragment {
 	public void btnCameraClick(View v) {
 		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		this.startActivityForResult(camera, 1337);
-	}
-
-	public void btnMicClick(View v) {
-
 	}
 }
