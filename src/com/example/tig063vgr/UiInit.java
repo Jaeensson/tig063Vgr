@@ -65,12 +65,10 @@ public class UiInit extends FragmentActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 
     public void initSliding() {
-
         menu = new SlidingMenu(this);
         menu.setMode(SlidingMenu.LEFT);
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
@@ -86,15 +84,11 @@ public class UiInit extends FragmentActivity {
 
         mainListView = (ListView) findViewById(R.id.menuList);
         ArrayList<MenuListItem> list = new ArrayList<MenuListItem>();
-        list.add(new MenuListItem("Rasmus",
-                R.drawable.telephone_icon, "0767772025"));
-        list.add(new MenuListItem("Adam", R.drawable.telephone_icon,
-                "0737747780"));
-        list.add(new MenuListItem("Anna", R.drawable.telephone_icon,
-                "0735864505"));
+        list.add(new MenuListItem("Rasmus", R.drawable.telephone_icon, "0767772025"));
+        list.add(new MenuListItem("Adam", R.drawable.telephone_icon, "0737747780"));
+        list.add(new MenuListItem("Anna", R.drawable.telephone_icon, "0735864505"));
         MenuListAdapter a = new MenuListAdapter(this, list);
-        View header = getLayoutInflater().inflate(R.layout.sliding_menu_header,
-                null);
+        View header = getLayoutInflater().inflate(R.layout.sliding_menu_header, null);
         // TODO: Make header NON-clickable
         mainListView.addHeaderView(header);
         mainListView.setAdapter(a);

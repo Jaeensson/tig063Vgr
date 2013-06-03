@@ -5,12 +5,6 @@
     android:background="@color/slidingMenu_grey"
     android:orientation="vertical" >
 
-	<EditText
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:inputType="textMultiLine"
-			android:ems="10"
-			android:id="@+id/editText" android:layout_gravity="right|center_vertical"/>
 	<ListView
         android:id="@+id/menuList"
         android:layout_width="match_parent"
