@@ -6,8 +6,11 @@ public class MenuListItem {
     private String phone;
 
     public MenuListItem(String txt, int res, String no) {
+        //ResourceId för bilden som ska visas i listan
         resId = res;
+        //Texten som ska visas
         text = txt;
+        //Telefonummret som rings när man klickar i listan
         phone = no;
     }
     public int getResId() {

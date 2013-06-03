@@ -1,4 +1,4 @@
-package com.example.tig063vgr;
+package com.example.tig063vgr.httprules;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.example.tig063vgr.APIType;
+import com.example.tig063vgr.MainActivity;
 import org.apache.http.client.ClientProtocolException;
 import org.json.JSONArray;
 import org.json.JSONException;

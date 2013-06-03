@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.example.tig063vgr.APIType;
-import com.example.tig063vgr.NetworkTasks;
 
 public class Statistics extends NetworkTasks {
 

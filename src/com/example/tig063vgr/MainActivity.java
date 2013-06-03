@@ -20,9 +20,9 @@ import java.util.Random;
 public class MainActivity extends UiInit {
 
     public SlidePagerAdapter mSectionsPagerAdapter;
-    ViewPager mViewPager;
+    private ViewPager mViewPager;
     private static final int PICTURE_RESULT = 1337;
-    SoundRecorder record;
+    private SoundRecorder record;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,10 @@ public class MainActivity extends UiInit {
                 }
             }
         }
+    }
 
+    public void btnExitClick(View v) {
+        finish();
     }
 
     public void setData(JSONArray result) {
@@ -93,8 +96,6 @@ public class MainActivity extends UiInit {
             e1.printStackTrace();
         }
         mSectionsPagerAdapter.setEquipment(e);
-
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
     }
 }
