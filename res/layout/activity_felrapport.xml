@@ -121,6 +121,7 @@
 			android:layout_height="wrap_content"
 			android:text="Skicka felrapport"
 			android:id="@+id/button"
+			android:onClick="btnSendClick"
 			android:layout_below="@+id/radioGroup1" android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
